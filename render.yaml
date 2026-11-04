@@ -1,0 +1,17 @@
+# Render Blueprint for the BFH static site.
+# In Render: New > Blueprint > pick this repo. Render reads this file and creates the site.
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: bfh-redesign
+    runtime: static
+    buildCommand: echo "static site, no build step"
+    staticPublishPath: public
+    autoDeploy: true
+    headers:
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
