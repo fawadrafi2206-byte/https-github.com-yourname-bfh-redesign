@@ -9,7 +9,8 @@
   var doc = document.documentElement;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var narrow = window.matchMedia('(max-width: 820px)').matches;
-  var pinned = !reduce && !narrow;
+  var story = document.querySelector('.story');
+  var pinned = !!story && !reduce && !narrow;
   var lenis = null;
 
   doc.classList.add('js');
@@ -30,7 +31,6 @@
   }
 
   var hdr = document.getElementById('hdr');
-  var story = document.querySelector('.story');
   var heroCopy = document.querySelector('.hero-copy');
   var scenes = Array.prototype.slice.call(document.querySelectorAll('.scene'));
   var vid = document.querySelector('.bgvid');
@@ -69,7 +69,7 @@
 
   function render() {
     var y = window.pageYOffset || doc.scrollTop || 0;
-    var r = story.getBoundingClientRect();
+    var r = pinned ? story.getBoundingClientRect() : null;
     var vh = window.innerHeight;
 
     hdr.classList.toggle('is-solid', pinned ? r.bottom < vh * 0.4 : y > 80);
@@ -125,19 +125,31 @@
 
   /* ---------- hero numbers count up once ---------- */
   var counters = Array.prototype.slice.call(document.querySelectorAll('.cnt'));
+  function runCount(el, delay) {
+    var to = parseFloat(el.getAttribute('data-to'));
+    var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+    var start = null;
+    function step(ts) {
+      if (start === null) start = ts;
+      var q = clamp((ts - start - delay) / 1800, 0, 1);
+      el.textContent = (to * (1 - Math.pow(1 - q, 4))).toFixed(dec);
+      if (q < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
   if (!reduce) {
+    var cio = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        runCount(en.target, 0);
+        cio.unobserve(en.target);
+      });
+    }, { threshold: 0.6 }) : null;
     counters.forEach(function (el) {
-      var to = parseFloat(el.getAttribute('data-to'));
       var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
       el.textContent = (0).toFixed(dec);
-      var start = null;
-      function step(ts) {
-        if (start === null) start = ts;
-        var q = clamp((ts - start - 500) / 1800, 0, 1);
-        el.textContent = (to * (1 - Math.pow(1 - q, 4))).toFixed(dec);
-        if (q < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
+      if (el.closest('.stats') || !cio) runCount(el, 500);   // hero numbers run on load
+      else cio.observe(el);                                    // others run when scrolled into view
     });
   }
 
