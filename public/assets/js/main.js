@@ -88,7 +88,7 @@
   /* ---------- anchor links ---------- */
   document.addEventListener('click', function (e) {
     var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
-    if (!a) return;
+    if (!a || a.hasAttribute('data-modal')) return;
     var id = a.getAttribute('href');
     if (!id || id.length < 2) return;
     var target = document.querySelector(id);
@@ -97,6 +97,139 @@
     if (lenis) lenis.scrollTo(target, { offset: -64 });
     else target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
   });
+
+  /* ---------- popups: spaces, smart features, interview ----------
+     One <dialog id="modal"> is filled from the data-* attributes of the card that was clicked. */
+  var modal = document.getElementById('modal');
+  var mBody = document.getElementById('modal-body');
+  var mLabel = document.getElementById('modal-label');
+  var mOpener = null;
+
+  if (modal && mBody && typeof modal.showModal === 'function') {
+    var SPACE_CHIPS = ['Executive Space', 'High-Speed WiFi', 'Video Conferencing', 'Premium Seating', 'Meeting Support', 'Sound Insulated'];
+    var SPACE_DETAILS = [
+      ['Capacity', 'Up to 20 Attendees'],
+      ['Seating style', 'Boardroom, U-Shape, Classroom, Theatre'],
+      ['Presentation screen', '75" 4K Display'],
+      ['Location', 'Central Business District'],
+      ['Refreshments', 'Service Available']
+    ];
+    var SPACE_GROUPS = [
+      ['Connectivity', ['High-Speed Business WiFi', 'Dedicated Wired Internet', 'Video Conferencing Support', 'Wireless Screen Sharing']],
+      ['Workspace amenities', ['Executive Meeting Table', 'Ergonomic Seating', 'Digital Presentation System', 'Whiteboard & Flipcharts', 'Laptop-Compatible Connectivity', 'Sound-Insulated Environment']],
+      ['Business support', ['Administrative Assistance', 'Printing & Scanning Services', 'Catering Options Available', 'Event Coordination Support', 'On-Site Technical Assistance', 'Flexible Booking Options']],
+      ['Safety & security', ['24/7 Security Monitoring', 'Controlled Access Entry', 'Emergency Response Systems', 'Fire Safety Compliance']]
+    ];
+    var LABELS = { space: 'Space information', feature: 'Smart feature', video: 'Interview' };
+    var ARROW_L = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
+    var ARROW_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
+
+    var esc = function (t) {
+      return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    };
+    var mail = function (subject) {
+      return 'mailto:bfharbour@gmail.com?subject=' + encodeURIComponent(subject);
+    };
+    var gallery = function (imgs, alt) {
+      var h = '<div class="m-gallery">';
+      imgs.forEach(function (src, i) {
+        h += '<img src="' + esc(src) + '" alt="' + (i === 0 ? esc(alt) : '') + '"' + (i === 0 ? ' class="is-active"' : '') + ' decoding="async">';
+      });
+      if (imgs.length > 1) {
+        h += '<button type="button" class="m-nav prev" data-gal="-1" aria-label="Previous photo">' + ARROW_L + '</button>' +
+             '<button type="button" class="m-nav next" data-gal="1" aria-label="Next photo">' + ARROW_R + '</button>' +
+             '<span class="m-count" aria-live="polite">1 / ' + imgs.length + '</span>';
+      }
+      return h + '</div>';
+    };
+    var group = function (g) {
+      return '<div><h4>' + esc(g[0]) + '</h4><ul>' + g[1].map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul></div>';
+    };
+    var cta = function (label, subject) {
+      return '<div class="m-actions"><a class="btn" href="' + esc(mail(subject)) + '" style="border-color:#0B4F42;color:#0B4F42"><span>' + esc(label) + '</span></a></div>';
+    };
+
+    var buildSpace = function (d) {
+      var parking = d.kind === 'parking';
+      var h = gallery([d.img, d.img2], d.title);
+      h += '<div class="m-text"><div class="m-kicker"><span aria-hidden="true"></span>' + esc(d.num) + ' &mdash; ' + esc(d.avail) + '</div>' +
+           '<h3 class="m-title" id="modal-title">' + esc(d.title) + '</h3><p class="m-price">' + esc(d.price) + '</p>';
+      if (!parking) {
+        h += '<ul class="m-chips">' + SPACE_CHIPS.map(function (c) { return '<li>' + esc(c) + '</li>'; }).join('') + '</ul>' +
+             '<dl class="m-details">' + SPACE_DETAILS.map(function (r) { return '<div><dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd></div>'; }).join('') + '</dl>';
+      }
+      h += '<div class="m-groups">' + SPACE_GROUPS.filter(function (g) { return !parking || g[0] === 'Safety & security'; }).map(group).join('') + '</div>';
+      h += cta('Enquire about this space', 'Space enquiry: ' + d.title + ' (' + d.num + ')');
+      h += '<p class="todo m-todo">TODO-VERIFY &middot; space details carried over from the current site&rsquo;s popup; photos come from the existing set</p></div>';
+      return h;
+    };
+    var buildFeature = function (d) {
+      return gallery([d.img], d.title) +
+        '<div class="m-text"><div class="m-kicker"><span aria-hidden="true"></span>' + esc(d.num) + ' &mdash; Smart feature</div>' +
+        '<h3 class="m-title" id="modal-title">' + esc(d.title) + '</h3>' +
+        '<p class="m-note">One of the engineering and smart features built into the Harbour.</p>' +
+        cta('Enquire about leasing', 'Leasing enquiry: ' + d.title) + '</div>';
+    };
+    var buildVideo = function (d) {
+      return '<div class="m-video"><video controls playsinline autoplay preload="metadata" poster="' + esc(d.poster || '') + '" src="' + esc(d.src) + '"></video></div>' +
+        '<div class="m-text m-text-tight"><h3 class="m-title" id="modal-title">' + esc(d.title) + '</h3></div>';
+    };
+
+    var openModal = function (trigger) {
+      var d = trigger.dataset;
+      var kind = d.modal;
+      mBody.innerHTML = kind === 'space' ? buildSpace(d) : kind === 'feature' ? buildFeature(d) : buildVideo(d);
+      mLabel.textContent = LABELS[kind] || 'Details';
+      mOpener = trigger;
+      modal.showModal();
+      doc.classList.add('modal-open');
+      if (lenis) lenis.stop();
+      var panel = modal.querySelector('.modal-panel');
+      if (panel) panel.scrollTop = 0;
+    };
+    var step = function (dir) {
+      var imgs = mBody.querySelectorAll('.m-gallery img');
+      if (imgs.length < 2) return;
+      var cur = 0;
+      Array.prototype.forEach.call(imgs, function (im, i) { if (im.classList.contains('is-active')) cur = i; });
+      var next = (cur + dir + imgs.length) % imgs.length;
+      imgs[cur].classList.remove('is-active');
+      imgs[next].classList.add('is-active');
+      var c = mBody.querySelector('.m-count');
+      if (c) c.textContent = (next + 1) + ' / ' + imgs.length;
+    };
+
+    // runs once per close, whichever way the popup was closed
+    var cleanup = function () {
+      if (!doc.classList.contains('modal-open')) return;
+      doc.classList.remove('modal-open');
+      if (lenis && !doc.classList.contains('menu-open')) lenis.start();
+      mBody.innerHTML = '';   // also stops the video
+      if (mOpener && mOpener.focus) mOpener.focus({ preventScroll: true });
+      mOpener = null;
+    };
+    var closeModal = function () {
+      if (modal.open) modal.close();
+      cleanup();
+    };
+
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest ? e.target.closest('[data-modal]') : null;
+      if (t) { e.preventDefault(); openModal(t); return; }
+      if (!modal.open) return;
+      if (e.target === modal || (e.target.closest && e.target.closest('[data-modal-close]'))) { closeModal(); return; }
+      var g = e.target.closest ? e.target.closest('[data-gal]') : null;
+      if (g) step(parseInt(g.getAttribute('data-gal'), 10));
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!modal.open) return;
+      if (e.key === 'Escape') { e.preventDefault(); closeModal(); }
+      else if (e.key === 'ArrowLeft') step(-1);
+      else if (e.key === 'ArrowRight') step(1);
+    });
+    modal.addEventListener('cancel', function (e) { e.preventDefault(); closeModal(); });
+    modal.addEventListener('close', function () { if (!modal.open) cleanup(); });
+  }
 
   /* ---------- scroll reveals ---------- */
   function splitWords(el) {
