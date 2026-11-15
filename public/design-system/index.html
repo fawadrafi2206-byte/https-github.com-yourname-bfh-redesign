@@ -82,7 +82,8 @@
 <div class="sw"><div class="sw-c" style="background:#566260;color:#FFFFFF"><b>Secondary ink</b><span>#566260</span></div><p>Supporting text on paper</p></div>
 <div class="sw"><div class="sw-c" style="background:#0B4F42;color:#FFFFFF"><b>Harbour green</b><span>#0B4F42</span></div><p>Labels, links and buttons on paper</p></div>
 <div class="sw"><div class="sw-c" style="background:#06302A;color:#FFFFFF"><b>Deep green</b><span>#06302A</span></div><p>Dark sections</p></div>
-<div class="sw"><div class="sw-c" style="background:#04201C;color:#FFFFFF"><b>Night</b><span>#04201C</span></div><p>Footer, the Climb, popups on dark</p></div>
+<div class="sw"><div class="sw-c" style="background:#04201C;color:#FFFFFF"><b>Night</b><span>#04201C</span></div><p>Manifesto, the Climb, footer, popups on dark</p></div>
+<div class="sw"><div class="sw-c" style="background:#02120F;color:#FFFFFF"><b>Abyss</b><span>#02120F</span></div><p>Hero base, spaces rail, figures band</p></div>
 <div class="sw"><div class="sw-c" style="background:#C2A267;color:#04201C"><b>Champagne</b><span>#C2A267</span></div><p>Rules, markers, focus ring</p></div>
 <div class="sw"><div class="sw-c" style="background:#D9BE8A;color:#04201C"><b>Champagne light</b><span>#D9BE8A</span></div><p>Labels and emphasis on dark</p></div>
 <div class="sw"><div class="sw-c" style="background:#9B3B2E;color:#FFFFFF"><b>Error</b><span>#9B3B2E</span></div><p>Form errors only</p></div>
@@ -97,6 +98,7 @@
 <tr><td><span class="chip" style="background:#F3F1EC;color:#0B4F42">Aa</span> Harbour green on paper shade</td><td>#0B4F42 on #F3F1EC</td><td>8.4 : 1</td><td>AAA</td></tr>
 <tr><td><span class="chip" style="background:#04201C;color:#FFFFFF">Aa</span> White on night</td><td>#FFFFFF on #04201C</td><td>17.1 : 1</td><td>AAA</td></tr>
 <tr><td><span class="chip" style="background:#06302A;color:#FFFFFF">Aa</span> White on deep green</td><td>#FFFFFF on #06302A</td><td>14.3 : 1</td><td>AAA</td></tr>
+<tr><td><span class="chip" style="background:#02120F;color:#FFFFFF">Aa</span> White on abyss</td><td>#FFFFFF on #02120F</td><td>19.2 : 1</td><td>AAA</td></tr>
 <tr><td><span class="chip" style="background:#04201C;color:#D9BE8A">Aa</span> Champagne light on night</td><td>#D9BE8A on #04201C</td><td>9.5 : 1</td><td>AAA</td></tr>
 <tr><td><span class="chip" style="background:#06302A;color:#D9BE8A">Aa</span> Champagne light on deep green</td><td>#D9BE8A on #06302A</td><td>8.0 : 1</td><td>AAA</td></tr>
 <tr><td><span class="chip" style="background:#F3F1EC;color:#9B3B2E">Aa</span> Error on paper shade</td><td>#9B3B2E on #F3F1EC</td><td>6.1 : 1</td><td>AA</td></tr>
@@ -126,7 +128,11 @@
 <li><b>Margins</b><span>72px on desktop, 24px on phones. Beyond 1920px the content stays 1776px wide and centred.</span></li>
 <li><b>Rhythm</b><span>144 to 176px between sections on desktop, 96px on phones.</span></li>
 <li><b>Breakpoints</b><span>860px: grids stack, the Climb stops pinning, popups go full screen. 1921px and up: content width is capped.</span></li>
-<li><b>Section label</b><span>Number, a 32px champagne rule, then an uppercase label: "05 &mdash; Available Spaces".</span></li>
+<li><b>Section label</b><span>A 32px champagne rule, then an uppercase label: "Available spaces".</span></li>
+<li><b>Chapters</b><span>The home page is one climb in thirteen chapters: ground, the harbour, the towers, the climb, in figures, smart building, spaces, landmark, services, in their words, location, arrival, enquire.</span></li>
+<li><b>Floor gauge</b><span>From 1101px wide: a thin gauge in the left margin shows the floor (1 to 53) and the chapter you are in. It hides during the Climb, which has its own counter.</span></li>
+<li><b>Pinned moments</b><span>The manifesto (270vh), the Climb (420vh) and the spaces rail (horizontal) pin on desktop when motion is allowed. Phones and reduced motion get plain stacks and a swipeable rail.</span></li>
+<li><b>Sail mask</b><span>Photos in the smart-building frame and beside the founder are cut with a curved top-left corner, echoing the towers.</span></li>
 </ul>
 </section>
 
@@ -156,6 +162,9 @@
 <li><b>Headlines</b><span>Words rise through a mask, 1.1s, ease (0.16, 1, 0.3, 1), 45ms between words.</span></li>
 <li><b>Body and cards</b><span>Fade up 20px, 1s, staggered up to 450ms within a group.</span></li>
 <li><b>Hero</b><span>Looping film under the title. The title drifts at 16% of the scroll speed and fades out.</span></li>
+<li><b>Manifesto</b><span>Pinned for 270vh. The sentence lights up word by word as you scroll; the buttons appear when it is complete.</span></li>
+<li><b>Spaces rail</b><span>Pinned. Scrolling slides six cards sideways; a champagne line shows progress.</span></li>
+<li><b>Smart building</b><span>The list drives the picture: the item nearest the middle of the screen is lit and its photo fades in.</span></li>
 <li><b>The Climb</b><span>Pinned for 420vh. Floor 1 to 53 follows the scroll, four stops cross-fade for 1.1s, the photo pushes in from 110% to 103%.</span></li>
 <li><b>Numbers</b><span>Count up once, 1.8s, when 60% visible.</span></li>
 <li><b>Popups</b><span>0.35s fade, 0.55s rise. Escape, the Close button and the dark backdrop all close them. Arrow keys flip photos.</span></li>
@@ -185,6 +194,7 @@
 <li><b>Space popups</b><span>Details (capacity, amenities, support, safety) and the two photos per space are the original site's placeholder copy and our existing photos. Car parking shows safety only. Needs real per-space data and photography.</span></li>
 <li><b>Smart feature popups</b><span>Only the name and a photo. The original site shows the same placeholder sentence on every feature, so none was copied. Needs a real description for each of the eight.</span></li>
 <li><b>Interior photography</b><span>There are no lobby or office-floor photos, so the Climb uses exterior views only. Add interiors to make the middle stops literal.</span></li>
+<li><b>In figures</b><span>The original shows 1.2+ Sq. Ft. Premium Luxury Workspace and 24.7+ Security & Facility Management. The units look incomplete (1.2 is probably millions). Confirm the real figures and units.</span></li>
 <li><b>Videos</b><span>The hero film, the interview and the landmark band stream from the original site's hosts (Cloudinary and bfh.dorio.io). Move BFH-owned copies onto your own hosting before the original site goes away.</span></li>
 <li><b>Why Bahrain figures</b><span>From 2021 surveys (InterNations, HSBC). Confirm they are current. The * after Gulf in the tax paragraph has no footnote yet.</span></li>
 <li><b>Arabic version</b><span>Hero only. Needs approved Arabic copy for the full site; do not machine-translate.</span></li>
