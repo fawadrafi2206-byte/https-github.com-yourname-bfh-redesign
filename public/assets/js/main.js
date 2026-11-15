@@ -449,6 +449,7 @@
       'main section:not(.hero) p, main section:not(.hero) figure, main section:not(.hero) blockquote, ' +
       'main section:not(.hero) .card, main section:not(.hero) .cols3 > div, main section:not(.hero) .cols4 > div, footer .cols4 > div'
     )).filter(function (el, _i, all) {
+      if (el.closest('[data-nofade]')) return false;   // scroll-driven text manages its own reveal
       return !all.some(function (o) { return o !== el && o.contains(el); });
     });
     var seen = new Map();
