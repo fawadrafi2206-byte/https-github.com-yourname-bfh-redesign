@@ -231,6 +231,35 @@
     modal.addEventListener('close', function () { if (!modal.open) cleanup(); });
   }
 
+  /* ---------- background videos ----------
+     The files stay on the original site's video hosts. A video only gets its source when it is
+     near the screen and pauses when it leaves; nothing loads for reduced motion or data saver. */
+  var conn = navigator.connection || {};
+  var lowData = !!conn.saveData || /(^|-)2g$/.test(conn.effectiveType || '');
+  var bgVideos = Array.prototype.slice.call(document.querySelectorAll('video[data-src]'));
+  if (bgVideos.length && !reduce && !lowData) {
+    var startVideo = function (v) {
+      if (!v.getAttribute('src')) {
+        v.muted = true;
+        v.addEventListener('playing', function () { v.classList.add('is-playing'); }, { once: true });
+        v.src = v.getAttribute('data-src');
+      }
+      var pr = v.play();
+      if (pr && pr.catch) pr.catch(function () {});
+    };
+    if ('IntersectionObserver' in window) {
+      var vio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) startVideo(en.target);
+          else if (en.target.getAttribute('src')) en.target.pause();
+        });
+      }, { rootMargin: '200px 0px', threshold: 0.01 });
+      bgVideos.forEach(function (v) { vio.observe(v); });
+    } else {
+      bgVideos.forEach(startVideo);
+    }
+  }
+
   /* ---------- scroll reveals ---------- */
   function splitWords(el) {
     var idx = 0;
