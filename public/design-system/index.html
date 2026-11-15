@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Design system | Bahrain Financial Harbour</title>
+<meta name="description" content="Colours, type, layout, components and motion used on the Bahrain Financial Harbour website, with the open items still to fill.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#04201C">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Google+Sans+Flex:wght@200;300;400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+.ds-bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px var(--gut);background:#04201C;color:#fff}
+.ds-bar .logo img{display:block;width:56px;height:auto}
+.ds-bar nav{display:flex;flex-wrap:wrap;gap:6px 26px;font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase}
+.ds-bar nav a{padding:6px 0}
+.ds-sec{padding:112px var(--gut)}
+.ds-sec.alt{background:#F3F1EC}
+.ds-sec.dark{background:#04201C;color:#fff}
+.ds-lbl{display:flex;align-items:center;gap:16px;margin:0 0 44px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#0B4F42}
+.ds-lbl::before{content:'';display:block;width:32px;height:1px;background:#C2A267}
+.dark .ds-lbl{color:#D9BE8A}
+.ds-h1{margin:0;font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:300;font-size:clamp(3rem,7vw,7rem);line-height:.98;letter-spacing:-.02em;text-transform:uppercase}
+.ds-h2{margin:0 0 40px;font-weight:200;font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;letter-spacing:-.03em}
+.ds-lead{max-width:60ch;margin:32px 0 0;font-size:17px;font-weight:300;line-height:1.85;color:#566260}
+.dark .ds-lead{color:rgba(255,255,255,.82)}
+.sw-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.sw-c{display:flex;flex-direction:column;justify-content:flex-end;gap:4px;min-height:150px;padding:18px;border:1px solid rgba(23,32,30,.14);font-size:13px}
+.sw-c b{font-weight:500}.sw-c span{font-weight:300;letter-spacing:.08em}
+.sw p{margin:12px 0 0;font-size:13px;font-weight:300;line-height:1.6;color:#566260}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;font-weight:300}
+.tbl th{padding:12px 16px 12px 0;border-bottom:1px solid rgba(23,32,30,.3);text-align:left;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#566260}
+.tbl td{padding:14px 16px 14px 0;border-bottom:1px solid rgba(23,32,30,.12);vertical-align:top}
+.chip{display:inline-block;min-width:34px;margin-right:8px;padding:2px 8px;border:1px solid rgba(23,32,30,.18);text-align:center;font-weight:500}
+.spec{display:grid;grid-template-columns:200px 1fr;gap:12px 32px;padding:28px 0;border-bottom:1px solid rgba(23,32,30,.14)}
+.spec .meta{font-size:12px;font-weight:300;line-height:1.7;color:#566260}
+.spec .meta b{display:block;margin-bottom:6px;font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#17201E}
+.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}
+.demo{padding:36px;border:1px solid rgba(23,32,30,.14);background:#FBFAF7}
+.demo.dark{background:#04201C;color:#fff;border-color:#04201C}
+.demo h3{margin:0 0 20px;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#566260}
+.demo.dark h3{color:#D9BE8A}
+.row{display:flex;flex-wrap:wrap;gap:16px}
+.list{list-style:none;margin:0;padding:0}
+.list li{display:grid;grid-template-columns:240px 1fr;gap:12px 32px;padding:18px 0;border-bottom:1px solid rgba(23,32,30,.14);font-size:15px;font-weight:300;line-height:1.7}
+.list li b{font-weight:500}
+.list li span{color:#566260}
+.ds-card{max-width:340px}
+.ds-card .ph{position:relative;height:300px;overflow:hidden;background:#E7E4DD}
+.ds-card .ph img{display:block;width:100%;height:100%;object-fit:cover}
+.ds-pop .modal-panel{width:100%;max-height:none;overflow:visible;animation:none;box-shadow:0 20px 60px rgba(4,32,28,.18)}
+.ds-pop .m-gallery{aspect-ratio:21/9}
+.ds-foot{padding:48px var(--gut);background:#04201C;color:rgba(255,255,255,.7);font-size:12px;font-weight:300}
+@media (max-width:1100px){.sw-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.cols2{grid-template-columns:1fr}}
+@media (max-width:860px){.ds-sec{padding:80px 24px}.ds-bar{padding:16px 24px}.sw-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.spec,.list li{grid-template-columns:1fr}.tbl{display:block;overflow-x:auto}.ds-bar nav{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="ds-bar">
+<a class="logo" href="../" aria-label="Bahrain Financial Harbour, home"><img src="../assets/img/logo-white.png" alt="Bahrain Financial Harbour" width="56" height="46"></a>
+<nav aria-label="Sections"><a href="#colour">Colour</a><a href="#type">Type</a><a href="#layout">Layout</a><a href="#components">Components</a><a href="#motion">Motion</a><a href="#quality">Quality</a><a href="#open">Open items</a></nav>
+</header>
+<main id="main">
+
+<section class="ds-sec dark" style="padding-top:128px;padding-bottom:128px">
+<p class="ds-lbl">Design system</p>
+<h1 class="ds-h1">Quiet luxury,<br>built to last.</h1>
+<p class="ds-lead">Everything on this page is used on the live site. Calm, confident and architectural: lots of air, large photography and film, tiny precise labels, one champagne accent.</p>
+</section>
+
+<section class="ds-sec" id="colour">
+<p class="ds-lbl">01 &mdash; Colour</p>
+<h2 class="ds-h2">Ten colours, one accent.</h2>
+<div class="sw-grid">
+<div class="sw"><div class="sw-c" style="background:#FBFAF7;color:#17201E"><b>Paper</b><span>#FBFAF7</span></div><p>Page background</p></div>
+<div class="sw"><div class="sw-c" style="background:#F3F1EC;color:#17201E"><b>Paper shade</b><span>#F3F1EC</span></div><p>Alternate sections, form section</p></div>
+<div class="sw"><div class="sw-c" style="background:#17201E;color:#FBFAF7"><b>Ink</b><span>#17201E</span></div><p>Primary text on paper</p></div>
+<div class="sw"><div class="sw-c" style="background:#566260;color:#FFFFFF"><b>Secondary ink</b><span>#566260</span></div><p>Supporting text on paper</p></div>
+<div class="sw"><div class="sw-c" style="background:#0B4F42;color:#FFFFFF"><b>Harbour green</b><span>#0B4F42</span></div><p>Labels, links and buttons on paper</p></div>
+<div class="sw"><div class="sw-c" style="background:#06302A;color:#FFFFFF"><b>Deep green</b><span>#06302A</span></div><p>Dark sections</p></div>
+<div class="sw"><div class="sw-c" style="background:#04201C;color:#FFFFFF"><b>Night</b><span>#04201C</span></div><p>Footer, the Climb, popups on dark</p></div>
+<div class="sw"><div class="sw-c" style="background:#C2A267;color:#04201C"><b>Champagne</b><span>#C2A267</span></div><p>Rules, markers, focus ring</p></div>
+<div class="sw"><div class="sw-c" style="background:#D9BE8A;color:#04201C"><b>Champagne light</b><span>#D9BE8A</span></div><p>Labels and emphasis on dark</p></div>
+<div class="sw"><div class="sw-c" style="background:#9B3B2E;color:#FFFFFF"><b>Error</b><span>#9B3B2E</span></div><p>Form errors only</p></div>
+</div>
+<h3 style="margin:72px 0 16px;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#566260">Contrast (WCAG 2.1)</h3>
+<table class="tbl"><thead><tr><th>Pair</th><th>Colours</th><th>Ratio</th><th>Level</th></tr></thead><tbody>
+<tr><td><span class="chip" style="background:#FBFAF7;color:#17201E">Aa</span> Ink on paper</td><td>#17201E on #FBFAF7</td><td>15.9 : 1</td><td>AAA</td></tr>
+<tr><td><span class="chip" style="background:#F3F1EC;color:#17201E">Aa</span> Ink on paper shade</td><td>#17201E on #F3F1EC</td><td>14.7 : 1</td><td>AAA</td></tr>
+<tr><td><span class="chip" style="background:#FBFAF7;color:#566260">Aa</span> Secondary ink on paper</td><td>#566260 on #FBFAF7</td><td>6.1 : 1</td><td>AA</td></tr>
+<tr><td><span class="chip" style="background:#F3F1EC;color:#566260">Aa</span> Secondary ink on paper shade</td><td>#566260 on #F3F1EC</td><td>5.6 : 1</td><td>AA</td></tr>
+<tr><td><span class="chip" style="background:#FBFAF7;color:#0B4F42">Aa</span> Harbour green on paper</td><td>#0B4F42 on #FBFAF7</td><td>9.1 : 1</td><td>AAA</td></tr>
+<tr><td><span class="chip" style="background:#F3F1EC;color:#0B4F42">Aa</span> Harbour green on paper shade</td><td>#0B4F42 on #F3F1EC</td><td>8.4 : 1</td><td>AAA</td></tr>
+<tr><td><span class="chip" style="background:#04201C;color:#FFFFFF">Aa</span> White on night</td><td>#FFFFFF on #04201C</td><td>17.1 : 1</td><td>AAA</td></tr>
+<tr><td><span class="chip" style="background:#06302A;color:#FFFFFF">Aa</span> White on deep green</td><td>#FFFFFF on #06302A</td><td>14.3 : 1</td><td>AAA</td></tr>
+<tr><td><span class="chip" style="background:#04201C;color:#D9BE8A">Aa</span> Champagne light on night</td><td>#D9BE8A on #04201C</td><td>9.5 : 1</td><td>AAA</td></tr>
+<tr><td><span class="chip" style="background:#06302A;color:#D9BE8A">Aa</span> Champagne light on deep green</td><td>#D9BE8A on #06302A</td><td>8.0 : 1</td><td>AAA</td></tr>
+<tr><td><span class="chip" style="background:#F3F1EC;color:#9B3B2E">Aa</span> Error on paper shade</td><td>#9B3B2E on #F3F1EC</td><td>6.1 : 1</td><td>AA</td></tr>
+<tr><td><span class="chip" style="background:#FBFAF7;color:#C2A267">Aa</span> Champagne on paper (rules and markers only)</td><td>#C2A267 on #FBFAF7</td><td>2.3 : 1</td><td>decorative only</td></tr>
+</tbody></table>
+<p class="ds-lead" style="margin-top:24px">Body text needs 4.5 : 1 or more. Champagne on paper is for rules and markers only, never for small text.</p>
+</section>
+
+<section class="ds-sec alt" id="type">
+<p class="ds-lbl">02 &mdash; Type</p>
+<h2 class="ds-h2">Two families. No serif.</h2>
+<div class="spec"><div class="meta"><b>Display</b>Google Sans Flex 300<br>clamp(3.5rem, 8.4vw, 9rem)<br>-0.02em, uppercase</div><div style="font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:300;font-size:clamp(3rem,7vw,6.5rem);line-height:.98;letter-spacing:-.02em;text-transform:uppercase">Bahrain Financial Harbour</div></div>
+<div class="spec"><div class="meta"><b>Numbers</b>Google Sans Flex 200<br>clamp(4.5rem, 9.2vw, 9.5rem)<br>tabular, lining figures</div><div style="font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:200;font-size:clamp(4rem,8vw,8rem);line-height:.9;letter-spacing:-.045em;font-variant-numeric:tabular-nums lining-nums">1.2 &nbsp;250 &nbsp;53</div></div>
+<div class="spec"><div class="meta"><b>Headline</b>Poppins 200 to 300<br>clamp(2.75rem, 5.8vw, 5.75rem)<br>-0.035em</div><div style="font-weight:200;font-size:clamp(2.25rem,4.6vw,4.5rem);line-height:1.06;letter-spacing:-.035em">Spaces that <em style="font-style:italic;font-weight:300;color:#0B4F42">simply work.</em></div></div>
+<div class="spec"><div class="meta"><b>Statement</b>Poppins 300<br>clamp(1.75rem, 3.1vw, 3rem)<br>-0.03em</div><div style="font-weight:300;font-size:clamp(1.5rem,2.6vw,2.5rem);line-height:1.24;letter-spacing:-.03em;max-width:28ch">A landmark of finance, built to last.</div></div>
+<div class="spec"><div class="meta"><b>Lead</b>Poppins 300<br>17px, line 1.85</div><div style="font-weight:300;font-size:17px;line-height:1.85;color:#566260;max-width:60ch">A fully managed workplace ecosystem combining building operations, digital infrastructure, security, and tenant support in one seamless experience.</div></div>
+<div class="spec"><div class="meta"><b>Body</b>Poppins 300<br>15px, line 1.8</div><div style="font-weight:300;font-size:15px;line-height:1.8;color:#566260;max-width:60ch">Keep your business connected with high-speed fiber internet, secure network infrastructure and scalable bandwidth.</div></div>
+<div class="spec"><div class="meta"><b>Label</b>Poppins 500<br>11px, tracking 0.28em<br>uppercase</div><div style="font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#0B4F42">05 &mdash; Available Spaces</div></div>
+<div class="spec" style="border-bottom:0"><div class="meta"><b>Arabic</b>IBM Plex Sans Arabic<br>Arabic page only</div><div lang="ar" dir="rtl" style="font-weight:300;font-size:28px;line-height:1.5">حيث تُدار أعمال الخليج.</div></div>
+</section>
+
+<section class="ds-sec" id="layout">
+<p class="ds-lbl">03 &mdash; Layout</p>
+<h2 class="ds-h2">A twelve-column grid with room to breathe.</h2>
+<ul class="list">
+<li><b>Grid</b><span>12 columns, 24px gutters. Section label on columns 1 to 3, headline from column 4.</span></li>
+<li><b>Margins</b><span>72px on desktop, 24px on phones. Beyond 1920px the content stays 1776px wide and centred.</span></li>
+<li><b>Rhythm</b><span>144 to 176px between sections on desktop, 96px on phones.</span></li>
+<li><b>Breakpoints</b><span>860px: grids stack, the Climb stops pinning, popups go full screen. 1921px and up: content width is capped.</span></li>
+<li><b>Section label</b><span>Number, a 32px champagne rule, then an uppercase label: "05 &mdash; Available Spaces".</span></li>
+</ul>
+</section>
+
+<section class="ds-sec alt" id="components">
+<p class="ds-lbl">04 &mdash; Components</p>
+<h2 class="ds-h2">A small kit, used everywhere.</h2>
+<div class="cols2">
+<div class="demo"><h3>Buttons on paper</h3><div class="row"><a class="btn" href="#components" style="border-color:#0B4F42;color:#0B4F42"><span>Primary</span></a><a class="btn" href="#components" style="border-color:rgba(23,32,30,.35);color:#17201E"><span>Secondary</span></a></div></div>
+<div class="demo dark"><h3>Buttons on dark</h3><div class="row"><a class="btn" href="#components" style="border-color:#D9BE8A;color:#D9BE8A"><span>Primary</span></a><a class="btn" href="#components" style="border-color:rgba(255,255,255,.55);color:#fff"><span>Secondary</span></a></div></div>
+<div class="demo"><h3>Space card (opens the popup)</h3>
+<a class="card ds-card" href="#components" style="display:block"><div class="ph"><img src="../assets/img/space1.jpg" alt="Twin towers rising out of morning haze" loading="lazy"><span style="position:absolute;left:20px;top:20px;background:rgba(6,48,42,.82);padding:7px 12px;font-size:11px;font-weight:500;letter-spacing:.2em;color:#fff">01</span><span style="position:absolute;right:20px;top:20px;background:rgba(251,250,247,.95);padding:7px 14px;font-size:11px;font-weight:500;letter-spacing:.04em;color:#17201E">414 available</span></div><div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-top:24px"><div><div style="font-size:19px;font-weight:300;letter-spacing:-.01em">Office Space</div><div style="margin-top:8px;font-size:13px;font-weight:300;color:#566260">From $50.00 / hour</div></div><span style="font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#0B4F42;border-bottom:1px solid #C2A267;padding-bottom:6px">View &rarr;</span></div></a></div>
+<div class="demo"><h3>Form field and error state</h3>
+<div class="enq" style="gap:20px"><div class="enq-f"><label for="ds-a">Email *</label><input id="ds-a" type="email" value="sara@example.com"></div><div class="enq-f"><label for="ds-b">Email *</label><input id="ds-b" type="email" value="abc" aria-invalid="true" aria-describedby="ds-b-e"><div class="err" id="ds-b-e">Please enter a valid email address.</div></div></div></div>
+</div>
+<div class="demo ds-pop" style="margin-top:48px"><h3>Popup (spaces, smart features, interview)</h3>
+<div class="modal-panel"><div class="modal-head"><span class="modal-label">Space information</span><span class="modal-close" role="img" aria-label="Close button example">Close <span aria-hidden="true">&times;</span></span></div>
+<div class="m-gallery"><img class="is-active" src="../assets/img/space2.jpg" alt="Green-glazed towers against a deep blue sky" loading="lazy"><span class="m-count">1 / 2</span></div>
+<div class="m-text" style="padding-bottom:32px"><div class="m-kicker"><span aria-hidden="true"></span>02 &mdash; 140 available</div><h3 class="m-title" style="font-size:clamp(1.75rem,3vw,2.5rem);letter-spacing:-.03em;text-transform:none;color:#17201E">Office Space</h3><p class="m-price">From $440.00 / day</p></div></div></div>
+<div class="demo dark" style="margin-top:48px"><h3>The Climb floor counter</h3>
+<div style="display:flex;align-items:flex-end;gap:18px"><span style="font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:200;font-size:clamp(5rem,11vw,10rem);line-height:.82;letter-spacing:-.05em;font-variant-numeric:tabular-nums lining-nums">33</span><span style="padding-bottom:.9em;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#D9BE8A">Floor</span></div></div>
+</section>
+
+<section class="ds-sec" id="motion">
+<p class="ds-lbl">05 &mdash; Motion</p>
+<h2 class="ds-h2">Slow, soft, and always optional.</h2>
+<ul class="list">
+<li><b>Headlines</b><span>Words rise through a mask, 1.1s, ease (0.16, 1, 0.3, 1), 45ms between words.</span></li>
+<li><b>Body and cards</b><span>Fade up 20px, 1s, staggered up to 450ms within a group.</span></li>
+<li><b>Hero</b><span>Looping film under the title. The title drifts at 16% of the scroll speed and fades out.</span></li>
+<li><b>The Climb</b><span>Pinned for 420vh. Floor 1 to 53 follows the scroll, four stops cross-fade for 1.1s, the photo pushes in from 110% to 103%.</span></li>
+<li><b>Numbers</b><span>Count up once, 1.8s, when 60% visible.</span></li>
+<li><b>Popups</b><span>0.35s fade, 0.55s rise. Escape, the Close button and the dark backdrop all close them. Arrow keys flip photos.</span></li>
+<li><b>Desktop extras</b><span>Smooth scrolling, soft cursor ring and magnetic buttons. Fine pointers only.</span></li>
+<li><b>Reduced motion</b><span>Everything above is off: no film, no pin, no reveals. The Climb becomes four stacked stops.</span></li>
+</ul>
+</section>
+
+<section class="ds-sec alt" id="quality">
+<p class="ds-lbl">06 &mdash; Quality rules</p>
+<h2 class="ds-h2">What every page has to pass.</h2>
+<ul class="list">
+<li><b>Buttons and links</b><span>Every one does something real. No empty links. Space cards open popups, enquiries open an email or WhatsApp with the message ready, phone numbers open WhatsApp, the address opens the map.</span></li>
+<li><b>Forms</b><span>Labels, inline errors announced to screen readers, focus moves to the first problem, a clear ready state, and the draft is kept until you start a new enquiry.</span></li>
+<li><b>Accessibility</b><span>Skip link, visible focus ring, semantic landmarks, dialog semantics with focus return, full keyboard use, alt text, contrast as listed above.</span></li>
+<li><b>Performance</b><span>No framework. Images load lazily, videos start only near the screen and pause when they leave, nothing loads for data saver or reduced motion.</span></li>
+<li><b>Sharing and search</b><span>Titles, descriptions, social cards and structured data (Organization, Place). Currently set to noindex while this is a preview.</span></li>
+</ul>
+</section>
+
+<section class="ds-sec" id="open">
+<p class="ds-lbl">07 &mdash; Open items</p>
+<h2 class="ds-h2">What still needs real content.</h2>
+<ul class="list">
+<li><b>Social pages</b><span>Facebook, X and LinkedIn open each network's home page, as on the original site. Add BFH's real page addresses.</span></li>
+<li><b>Prices and availability</b><span>The six space cards carry over the original site's numbers (414, 140, 452, 350, 500 and 20 available; the prices). Confirm them.</span></li>
+<li><b>Space popups</b><span>Details (capacity, amenities, support, safety) and the two photos per space are the original site's placeholder copy and our existing photos. Car parking shows safety only. Needs real per-space data and photography.</span></li>
+<li><b>Smart feature popups</b><span>Only the name and a photo. The original site shows the same placeholder sentence on every feature, so none was copied. Needs a real description for each of the eight.</span></li>
+<li><b>Interior photography</b><span>There are no lobby or office-floor photos, so the Climb uses exterior views only. Add interiors to make the middle stops literal.</span></li>
+<li><b>Videos</b><span>The hero film, the interview and the landmark band stream from the original site's hosts (Cloudinary and bfh.dorio.io). Move BFH-owned copies onto your own hosting before the original site goes away.</span></li>
+<li><b>Why Bahrain figures</b><span>From 2021 surveys (InterNations, HSBC). Confirm they are current. The * after Gulf in the tax paragraph has no footnote yet.</span></li>
+<li><b>Arabic version</b><span>Hero only. Needs approved Arabic copy for the full site; do not machine-translate.</span></li>
+<li><b>Menu items</b><span>Construction progress and News and offers have no pages yet, so they scroll to Contact.</span></li>
+<li><b>Enquiry form</b><span>Opens the visitor's email app (or WhatsApp) with the message ready. Nothing is stored on a server. For real lead capture, connect a form service or CRM.</span></li>
+<li><b>Contact details</b><span>Email, WhatsApp number and address are as on the original site. The original shows two phone numbers (+973 1702600 in the header, +973 1710 2600 in the footer): confirm which is correct.</span></li>
+<li><b>Launch checklist</b><span>Final domain, canonical and social-share addresses, remove the noindex tags, add a sitemap, analytics and a cookie notice if needed.</span></li>
+</ul>
+</section>
+
+</main>
+<footer class="ds-foot">Bahrain Financial Harbour &middot; design system &middot; preview, not indexed</footer>
+</body>
+</html>
