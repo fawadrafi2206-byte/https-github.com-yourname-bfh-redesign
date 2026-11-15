@@ -30,10 +30,12 @@
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Google+Sans+Flex:wght@200;300;400;500&display=swap">
 <link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/ascent.css">
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/ascent.js" defer></script>
 </head>
-<body>
+<body class="a-home">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
 <a class="logo" href="#top" aria-label="Bahrain Financial Harbour, back to top"><img src="assets/img/logo-white.png" alt="Bahrain Financial Harbour" width="84" height="69"></a>
@@ -79,75 +81,67 @@
 </div>
 </div>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><clipPath id="a-sail" clipPathUnits="objectBoundingBox"><path d="M0,1 L0,0.34 C0,0.12 0.2,0 0.52,0 L1,0 L1,1 Z"/></clipPath></defs></svg>
+<div class="a-gauge" aria-hidden="true"><i class="rail"></i><i class="ticks"></i><i class="mark"></i><span class="fl">1</span><span class="ch">Ground</span></div>
+
 <main id="main">
 <!-- HERO -->
-<section class="hero" id="top" style="position:relative;height:100svh;min-height:720px;max-height:1080px;overflow:hidden;background:#0b1513">
-<img class="hero-img" fetchpriority="high" src="assets/img/hero.jpg" alt="Aerial view of the Bahrain Financial Harbour towers on the Manama waterfront" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block">
-<video class="bgvid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="https://res.cloudinary.com/pev30zsg/video/upload/v1792574077/Bahrain_Financial_Harbour_masterplan01.mp4" style="object-position:50% 40%"></video>
-<div aria-hidden="true" style="position:absolute;top:0;right:0;bottom:0;left:0;background:linear-gradient(180deg,rgba(4,18,16,.78) 0%,rgba(4,18,16,.18) 32%,rgba(4,18,16,.22) 58%,rgba(4,18,16,.88) 100%),linear-gradient(90deg,rgba(4,18,16,.6) 0%,rgba(4,18,16,0) 62%)"></div>
-<div class="hero-vline" aria-hidden="true" style="position:absolute;top:0;left:50%;width:1px;bottom:183px;background:rgba(255,255,255,.22)"></div>
-
-<div class="px hero-title-wrap" style="position:absolute;top:150px;left:0;right:0;z-index:2;padding:0 72px">
-<h1 style="margin:0;font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:300;font-size:clamp(3.5rem,8.4vw,9rem);line-height:.98;letter-spacing:-.02em;text-transform:uppercase;color:rgba(255,255,255,.74)">
-<span class="mask"><span class="rise" style="animation-delay:.3s"><span style="font-weight:400;color:#fff">B</span>ahrain</span></span>
-<span class="mask"><span class="rise l2" style="animation-delay:.4s"><span style="font-weight:400;color:#fff">F</span>inancial</span></span>
-<span class="mask"><span class="rise l3" style="animation-delay:.5s"><span style="font-weight:400;color:#fff">H</span>arbour</span></span>
+<section class="hero a-hero" id="top" data-chapter="Ground">
+<img class="a-hero-img" fetchpriority="high" src="assets/img/hero.jpg" alt="Aerial view of the Bahrain Financial Harbour towers on the Manama waterfront">
+<video class="bgvid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="https://res.cloudinary.com/pev30zsg/video/upload/v1792574077/Bahrain_Financial_Harbour_masterplan01.mp4"></video>
+<div class="a-hero-shade" aria-hidden="true"></div>
+<div class="hero-title-wrap a-hero-copy">
+<p class="a-kicker">Where the Gulf does business.</p>
+<h1>
+<span class="mask"><span class="rise" style="animation-delay:.3s"><b>B</b>ahrain</span></span>
+<span class="mask"><span class="rise" style="animation-delay:.42s"><b>F</b>inancial</span></span>
+<span class="mask"><span class="rise" style="animation-delay:.54s"><b>H</b>arbour</span></span>
 </h1>
 </div>
-
-<div class="px hero-info" style="position:absolute;left:0;right:0;bottom:112px;z-index:3;margin:0 72px;padding:26px 0 0;border-top:1px solid rgba(255,255,255,.3);display:grid;grid-template-columns:1fr auto 1fr;align-items:start;color:#fff;box-sizing:border-box;width:calc(100% - 144px)">
-<span aria-hidden="true" style="position:absolute;left:50%;top:-4px;width:7px;height:7px;margin-left:-3px;border-radius:50%;background:#fff"></span>
-<span class="fadein" style="font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;line-height:1.8">Manama,<br>Kingdom of Bahrain</span>
-<span class="fadein" style="font-style:italic;font-weight:300;font-size:22px;line-height:1.3;text-align:center">Where the Gulf<br>does business.</span>
-<span class="fadein" style="font-size:13px;font-weight:300;line-height:1.8;text-align:right">6HQC+8FF, King Faisal Hwy,<br>Manama, Bahrain</span>
-</div>
-
-<div class="fadein px" style="position:absolute;left:72px;bottom:40px;z-index:3;display:flex;align-items:center;gap:14px;color:#fff;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase">
-<span>Scroll down</span><span aria-hidden="true" style="display:block;width:1px;height:28px;background:#C2A267"></span>
+<div class="a-hero-foot fadein">
+<dl class="a-stats">
+<div><dt>BFH floors</dt><dd><span class="count" data-to="53" data-dec="0">53</span></dd></div>
+<div><dt>BWTC floors</dt><dd><span class="count" data-to="50" data-dec="0">50</span></dd></div>
+<div><dt>Businesses and tenants</dt><dd><span class="count" data-to="250" data-dec="0">250</span>+</dd></div>
+</dl>
+<a class="a-cue" href="#harbour">Scroll to climb<i aria-hidden="true"></i></a>
 </div>
 </section>
 
-<!-- 01 INTRO -->
-<section id="harbour" class="px sec" style="padding:176px 72px 168px;background:#FBFAF7">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:72px">
-<span style="grid-column:1 / span 3;display:flex;align-items:center;gap:16px;align-self:start;margin-top:22px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#0B4F42"><span aria-hidden="true" style="display:block;width:32px;height:1px;background:#C2A267"></span>01 &mdash; The Harbour</span>
-<h2 style="grid-column:4 / span 9;margin:0;font-weight:200;font-size:clamp(2.75rem,5.8vw,5.75rem);line-height:1.06;letter-spacing:-.035em;text-wrap:balance">Where ambition meets <em style="font-style:italic;font-weight:300;letter-spacing:-.02em;color:#0B4F42">opportunity,</em> daily.</h2>
-<div style="grid-column:4 / span 9;display:flex;flex-direction:column;gap:44px">
-<p style="margin:0;max-width:460px;font-size:17px;font-weight:300;line-height:1.85;color:#566260;text-wrap:pretty">Home to leading banks, institutions and enterprises, in the heart of Manama&rsquo;s waterfront.</p>
-<div class="stack-m" style="display:flex;gap:16px;flex-wrap:wrap">
-<a class="btn" href="#towers" style="border-color:#0B4F42;color:#0B4F42"><span>Explore the Harbour</span></a>
-<a class="btn" href="#enquire" style="border-color:rgba(23,32,30,.28);color:#17201E"><span>Enquire about leasing</span></a>
+<!-- THE HARBOUR -->
+<section id="harbour" class="a-mani" data-chapter="The Harbour">
+<div class="a-mani-pin">
+<span class="a-label">The Harbour</span>
+<h2 class="a-h2" style="margin-top:36px">Where ambition meets <em>opportunity,</em> daily.</h2>
+<p class="a-mani-text" data-fill data-nofade>More than a business address, we are a destination designed for ambition. Combining premium workspaces, modern amenities, and a thriving professional community, we provide an environment where businesses can perform, collaborate, and lead with confidence.</p>
+<div class="a-mani-foot">
+<p class="a-lead">Home to leading banks, institutions and enterprises, in the heart of Manama&rsquo;s waterfront.</p>
+<div class="a-btns">
+<a class="btn" href="#towers" style="border-color:#D9BE8A;color:#D9BE8A"><span>Explore the Harbour</span></a>
+<a class="btn" href="#enquire" style="border-color:rgba(255,255,255,.55);color:#fff"><span>Enquire about leasing</span></a>
 </div>
 </div>
 </div>
 </section>
 
-<!-- 02 THE TOWERS -->
-<section id="towers" class="px sec" style="padding:0 72px 176px">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:56px;margin-bottom:72px">
-<span style="grid-column:1 / span 3;display:flex;align-items:center;gap:16px;align-self:start;margin-top:14px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#0B4F42"><span aria-hidden="true" style="display:block;width:32px;height:1px;background:#C2A267"></span>02 &mdash; The Towers</span>
-<h2 style="grid-column:4 / span 8;margin:0;font-weight:300;font-size:clamp(2rem,3.6vw,3.5rem);line-height:1.16;letter-spacing:-.03em;text-wrap:balance">A landmark of finance, <em style="font-style:italic;font-weight:300;letter-spacing:-.02em;color:#0B4F42">built to last.</em></h2>
+<!-- THE TOWERS -->
+<section id="towers" class="a-towers" data-chapter="The Towers">
+<img class="a-towers-bg" src="assets/img/callout.jpg" alt="The BFH and BWTC towers rising against a clear sky" loading="lazy" decoding="async">
+<div class="a-towers-shade" aria-hidden="true"></div>
+<div class="a-towers-in">
+<div>
+<span class="a-label">The Towers</span>
+<h2 class="a-h2" style="margin-top:36px;max-width:11ch">A landmark of finance, <em>built to last.</em></h2>
 </div>
-<div class="callout" style="position:relative;width:100%;aspect-ratio:1920 / 1200;overflow:hidden;background:#cfe1f5">
-<img loading="lazy" decoding="async" src="assets/img/callout.jpg" alt="The BFH and BWTC towers rising against a clear sky" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block">
-<svg class="callout-lines" aria-hidden="true" viewBox="0 0 1296 810" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100%;height:100%">
-<g stroke="#ffffff" stroke-width="1" fill="none" stroke-dasharray="3 4"><path d="M820 324 L1010 264"/><path d="M530 470 L336 420"/></g>
-<g fill="#ffffff"><circle cx="820" cy="324" r="4"/><circle cx="530" cy="470" r="4"/></g>
-<g stroke="#ffffff" stroke-opacity=".6" fill="none"><circle cx="820" cy="324" r="11"/><circle cx="530" cy="470" r="11"/></g>
-</svg>
-<div class="callout-tag bfh" style="position:absolute;left:77.9%;top:27.9%;background:rgba(251,250,247,.95);padding:16px 22px 14px;min-width:130px">
-<div style="font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:200;font-size:36px;line-height:1;letter-spacing:-.02em">BFH</div>
-<div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(23,32,30,.18);font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#0B4F42">53 floors</div>
-</div>
-<div class="callout-tag bwtc" style="position:absolute;left:16%;top:46.5%;background:rgba(251,250,247,.95);padding:16px 22px 14px;min-width:130px">
-<div style="font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:200;font-size:36px;line-height:1;letter-spacing:-.02em">BWTC</div>
-<div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(23,32,30,.18);font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#0B4F42">50 floors</div>
-</div>
+<dl class="a-floors">
+<div><dt>BFH</dt><dd><span class="count" data-to="53" data-dec="0">53</span><small>floors</small></dd></div>
+<div><dt>BWTC</dt><dd><span class="count" data-to="50" data-dec="0">50</span><small>floors</small></dd></div>
+</dl>
 </div>
 </section>
 
 <!-- THE CLIMB -->
-<section id="climb" class="climb" aria-labelledby="climb-title" data-floors="53">
+<section id="climb" class="climb" data-chapter="The Climb" aria-labelledby="climb-title" data-floors="53">
 <div class="climb-stage">
 <div class="px climb-head">
 <span class="climb-label"><i aria-hidden="true"></i>The Climb</span>
@@ -176,247 +170,158 @@
 </div>
 </section>
 
-<!-- 03 WORKSPACES -->
-<section id="workspaces" class="px sec" style="padding:0 72px 176px">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:0">
-<span style="grid-column:1 / span 3;display:flex;align-items:center;gap:16px;align-self:start;margin-top:14px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#0B4F42"><span aria-hidden="true" style="display:block;width:32px;height:1px;background:#C2A267"></span>03 &mdash; Workspaces</span>
-<h2 style="grid-column:4 / span 9;margin:0;font-weight:300;font-size:clamp(1.75rem,3.1vw,3rem);line-height:1.24;letter-spacing:-.03em;text-wrap:balance">Premium commercial spaces designed for growth, collaboration and success, with modern infrastructure and a prime location.</h2>
-<figure style="grid-column:1 / span 5;margin:128px 0 0">
-<img loading="lazy" decoding="async" src="assets/img/about1.jpg" alt="Two glass towers above the Harbour plaza under a wide sky" style="display:block;width:100%;aspect-ratio:910 / 880;object-fit:cover">
-<figcaption style="margin-top:18px;padding-top:14px;border-top:1px solid rgba(23,32,30,.14);font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#566260">The Harbour by day</figcaption>
-</figure>
-<figure style="grid-column:7 / span 6;margin:72px 0 0">
-<img loading="lazy" decoding="async" src="assets/img/about2.jpg" alt="The Manama skyline at dusk across the water" style="display:block;width:100%;aspect-ratio:680 / 460;object-fit:cover">
-<figcaption style="margin-top:18px;padding-top:14px;border-top:1px solid rgba(23,32,30,.14);font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#566260">The Harbour at dusk</figcaption>
-</figure>
+<!-- IN FIGURES -->
+<section id="figures" class="a-ch a-fig" data-chapter="In figures">
+<span class="a-label">In figures</span>
+<div class="a-fig-grid">
+<div><div class="num"><span class="count" data-to="1.2" data-dec="1">1.2</span><sup>+</sup></div><p>Sq. Ft. Premium Luxury Workspace</p></div>
+<div><div class="num"><span class="count" data-to="250" data-dec="0">250</span><sup>+</sup></div><p>Businesses and Tenants</p></div>
+<div><div class="num"><span class="count" data-to="24.7" data-dec="1">24.7</span><sup>+</sup></div><p>Security &amp; Facility Management</p></div>
 </div>
+<p class="todo a-todo">TODO-VERIFY &middot; figures and units carried over from the current site</p>
 </section>
 
-<!-- 04 IN FIGURES -->
-<section id="figures" class="px sec" style="position:relative;padding:160px 72px;background:#06302A;color:#fff;overflow:hidden">
-<img loading="lazy" decoding="async" src="assets/img/night.jpg" alt="" aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block">
-<div aria-hidden="true" style="position:absolute;top:0;right:0;bottom:0;left:0;background:linear-gradient(180deg,rgba(4,20,18,.9) 0%,rgba(4,20,18,.66) 45%,rgba(4,20,18,.92) 100%)"></div>
-<div style="position:relative;z-index:2">
-<span style="display:flex;align-items:center;gap:16px;margin-bottom:88px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#D9BE8A"><span aria-hidden="true" style="display:block;width:32px;height:1px;background:#D9BE8A"></span>04 &mdash; In Figures</span>
-<div class="cols3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr))">
-<div style="padding:0 40px 0 0">
-<div style="font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:200;font-size:clamp(4.5rem,9.2vw,9.5rem);line-height:.9;letter-spacing:-.045em;font-variant-numeric:tabular-nums lining-nums"><span class="count" data-to="1.2" data-dec="1">1.2</span><span style="font-size:.3em;font-weight:300;letter-spacing:0;vertical-align:top;margin-left:.1em;color:#D9BE8A">+</span></div>
-<div style="margin-top:28px;max-width:230px;font-size:12px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;line-height:1.8;color:rgba(255,255,255,.88)">Sq. Ft. Premium Luxury Workspace</div>
+<!-- SMART BUILDING -->
+<section id="features" class="a-ch a-feat" data-chapter="Smart building">
+<div class="a-feat-head">
+<span class="a-label">Know more</span>
+<h2 class="a-h2" style="margin-top:36px">A full suite of advanced engineering solutions and <em>smart features.</em></h2>
 </div>
-<div style="padding:0 40px;border-left:1px solid rgba(255,255,255,.2)">
-<div style="font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:200;font-size:clamp(4.5rem,9.2vw,9.5rem);line-height:.9;letter-spacing:-.045em;font-variant-numeric:tabular-nums lining-nums"><span class="count" data-to="250" data-dec="0">250</span><span style="font-size:.3em;font-weight:300;letter-spacing:0;vertical-align:top;margin-left:.1em;color:#D9BE8A">+</span></div>
-<div style="margin-top:28px;max-width:230px;font-size:12px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;line-height:1.8;color:rgba(255,255,255,.88)">Businesses and Tenants</div>
-</div>
-<div style="padding:0 0 0 40px;border-left:1px solid rgba(255,255,255,.2)">
-<div style="font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:200;font-size:clamp(4.5rem,9.2vw,9.5rem);line-height:.9;letter-spacing:-.045em;font-variant-numeric:tabular-nums lining-nums"><span class="count" data-to="24.7" data-dec="1">24.7</span><span style="font-size:.3em;font-weight:300;letter-spacing:0;vertical-align:top;margin-left:.1em;color:#D9BE8A">+</span></div>
-<div style="margin-top:28px;max-width:230px;font-size:12px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;line-height:1.8;color:rgba(255,255,255,.88)">Security &amp; Facility Management</div>
-</div>
-</div>
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;margin-top:120px;padding-top:56px;border-top:1px solid rgba(255,255,255,.2)">
-<p style="grid-column:4 / span 8;margin:0;font-size:clamp(1.25rem,1.9vw,1.75rem);font-weight:300;line-height:1.6;letter-spacing:-.01em;color:rgba(255,255,255,.94);text-wrap:pretty">More than a business address, we are a destination designed for ambition. Combining premium workspaces, modern amenities, and a thriving professional community, we provide an environment where businesses can perform, collaborate, and lead with confidence.</p>
-<span class="todo" style="grid-column:4 / span 8;margin-top:36px;justify-self:start;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#D9BE8A;border:1px solid rgba(217,190,138,.5);padding:8px 14px">TODO-VERIFY &middot; figures and units carried over from the current site</span>
-</div>
-</div>
-</section>
-
-<!-- 05 AVAILABLE SPACES -->
-<section id="spaces" class="px sec" style="padding:176px 72px 176px">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;margin-bottom:96px">
-<span style="grid-column:1 / span 3;display:flex;align-items:center;gap:16px;align-self:start;margin-top:14px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#0B4F42"><span aria-hidden="true" style="display:block;width:32px;height:1px;background:#C2A267"></span>05 &mdash; Available Spaces</span>
-<h2 style="grid-column:4 / span 9;margin:0;font-weight:300;font-size:clamp(1.75rem,3.1vw,3rem);line-height:1.24;letter-spacing:-.03em;text-wrap:balance">Designed for today&rsquo;s professionals and tomorrow&rsquo;s leaders, our spaces provide the foundation for <em style="font-style:italic;font-weight:300;letter-spacing:-.02em;color:#0B4F42">exceptional</em> business performance.</h2>
-</div>
-<div class="cols3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:48px;row-gap:72px">
-
-<a class="card" href="#spaces" data-modal="space" data-kind="office" data-num="01" data-avail="414 available" data-title="Office Space" data-price="From $50.00 / hour" data-img="assets/img/space1.jpg" data-img2="assets/img/space2.jpg" aria-haspopup="dialog" style="display:block">
-<div style="position:relative;height:500px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/space1.jpg" alt="Twin towers rising out of morning haze" style="display:block;width:100%;height:100%;object-fit:cover">
-<span style="position:absolute;left:20px;top:20px;background:rgba(6,48,42,.82);padding:7px 12px;font-size:11px;font-weight:500;letter-spacing:.2em;color:#fff">01</span>
-<span style="position:absolute;right:20px;top:20px;background:rgba(251,250,247,.95);padding:7px 14px;font-size:11px;font-weight:500;letter-spacing:.04em;color:#17201E">414 available</span></div>
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-top:24px"><div><div style="font-size:19px;font-weight:300;letter-spacing:-.01em">Office Space</div><div style="margin-top:8px;font-size:13px;font-weight:300;color:#566260">From $50.00 / hour</div></div><span style="font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#0B4F42;border-bottom:1px solid #C2A267;padding-bottom:6px">View &rarr;</span></div>
-</a>
-
-<a class="card" href="#spaces" data-modal="space" data-kind="office" data-num="02" data-avail="140 available" data-title="Office Space" data-price="From $440.00 / day" data-img="assets/img/space2.jpg" data-img2="assets/img/space3.jpg" aria-haspopup="dialog" style="display:block;margin-top:72px">
-<div style="position:relative;height:500px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/space2.jpg" alt="Green-glazed towers against a deep blue sky" style="display:block;width:100%;height:100%;object-fit:cover">
-<span style="position:absolute;left:20px;top:20px;background:rgba(6,48,42,.82);padding:7px 12px;font-size:11px;font-weight:500;letter-spacing:.2em;color:#fff">02</span>
-<span style="position:absolute;right:20px;top:20px;background:rgba(251,250,247,.95);padding:7px 14px;font-size:11px;font-weight:500;letter-spacing:.04em;color:#17201E">140 available</span></div>
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-top:24px"><div><div style="font-size:19px;font-weight:300;letter-spacing:-.01em">Office Space</div><div style="margin-top:8px;font-size:13px;font-weight:300;color:#566260">From $440.00 / day</div></div><span style="font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#0B4F42;border-bottom:1px solid #C2A267;padding-bottom:6px">View &rarr;</span></div>
-</a>
-
-<a class="card" href="#spaces" data-modal="space" data-kind="meeting" data-num="03" data-avail="452 available" data-title="Business Meeting Space" data-price="From $145.00 / day" data-img="assets/img/space3.jpg" data-img2="assets/img/space4.jpg" aria-haspopup="dialog" style="display:block">
-<div style="position:relative;height:500px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/space3.jpg" alt="The two Harbour towers seen from the street" style="display:block;width:100%;height:100%;object-fit:cover">
-<span style="position:absolute;left:20px;top:20px;background:rgba(6,48,42,.82);padding:7px 12px;font-size:11px;font-weight:500;letter-spacing:.2em;color:#fff">03</span>
-<span style="position:absolute;right:20px;top:20px;background:rgba(251,250,247,.95);padding:7px 14px;font-size:11px;font-weight:500;letter-spacing:.04em;color:#17201E">452 available</span></div>
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-top:24px"><div><div style="font-size:19px;font-weight:300;letter-spacing:-.01em">Business Meeting Space</div><div style="margin-top:8px;font-size:13px;font-weight:300;color:#566260">From $145.00 / day</div></div><span style="font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#0B4F42;border-bottom:1px solid #C2A267;padding-bottom:6px">View &rarr;</span></div>
-</a>
-
-<a class="card" href="#spaces" data-modal="space" data-kind="office" data-num="04" data-avail="350 available" data-title="Office Space" data-price="From $520.00 / day" data-img="assets/img/space4.jpg" data-img2="assets/img/space5.jpg" aria-haspopup="dialog" style="display:block">
-<div style="position:relative;height:500px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/space4.jpg" alt="Sunset light on the green towers" style="display:block;width:100%;height:100%;object-fit:cover">
-<span style="position:absolute;left:20px;top:20px;background:rgba(6,48,42,.82);padding:7px 12px;font-size:11px;font-weight:500;letter-spacing:.2em;color:#fff">04</span>
-<span style="position:absolute;right:20px;top:20px;background:rgba(251,250,247,.95);padding:7px 14px;font-size:11px;font-weight:500;letter-spacing:.04em;color:#17201E">350 available</span></div>
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-top:24px"><div><div style="font-size:19px;font-weight:300;letter-spacing:-.01em">Office Space</div><div style="margin-top:8px;font-size:13px;font-weight:300;color:#566260">From $520.00 / day</div></div><span style="font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#0B4F42;border-bottom:1px solid #C2A267;padding-bottom:6px">View &rarr;</span></div>
-</a>
-
-<a class="card" href="#spaces" data-modal="space" data-kind="parking" data-num="05" data-avail="500 available" data-title="Car Parking Space" data-price="From $20.00 / day" data-img="assets/img/space5.jpg" data-img2="assets/img/space6.jpg" aria-haspopup="dialog" style="display:block;margin-top:72px">
-<div style="position:relative;height:500px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/space5.jpg" alt="The two towers framed by a blue sky" style="display:block;width:100%;height:100%;object-fit:cover">
-<span style="position:absolute;left:20px;top:20px;background:rgba(6,48,42,.82);padding:7px 12px;font-size:11px;font-weight:500;letter-spacing:.2em;color:#fff">05</span>
-<span style="position:absolute;right:20px;top:20px;background:rgba(251,250,247,.95);padding:7px 14px;font-size:11px;font-weight:500;letter-spacing:.04em;color:#17201E">500 available</span></div>
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-top:24px"><div><div style="font-size:19px;font-weight:300;letter-spacing:-.01em">Car Parking Space</div><div style="margin-top:8px;font-size:13px;font-weight:300;color:#566260">From $20.00 / day</div></div><span style="font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#0B4F42;border-bottom:1px solid #C2A267;padding-bottom:6px">View &rarr;</span></div>
-</a>
-
-<a class="card" href="#spaces" data-modal="space" data-kind="meeting" data-num="06" data-avail="20 available" data-title="Business Meeting Space" data-price="From $500.00 / day" data-img="assets/img/space6.jpg" data-img2="assets/img/space1.jpg" aria-haspopup="dialog" style="display:block">
-<div style="position:relative;height:500px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/space6.jpg" alt="A lit tower against the night sky" style="display:block;width:100%;height:100%;object-fit:cover">
-<span style="position:absolute;left:20px;top:20px;background:rgba(6,48,42,.82);padding:7px 12px;font-size:11px;font-weight:500;letter-spacing:.2em;color:#fff">06</span>
-<span style="position:absolute;right:20px;top:20px;background:rgba(251,250,247,.95);padding:7px 14px;font-size:11px;font-weight:500;letter-spacing:.04em;color:#17201E">20 available</span></div>
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-top:24px"><div><div style="font-size:19px;font-weight:300;letter-spacing:-.01em">Business Meeting Space</div><div style="margin-top:8px;font-size:13px;font-weight:300;color:#566260">From $500.00 / day</div></div><span style="font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#0B4F42;border-bottom:1px solid #C2A267;padding-bottom:6px">View &rarr;</span></div>
-</a>
-
-</div>
-<div class="todo" style="display:flex;justify-content:flex-end;margin-top:72px"><span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#566260;border:1px solid rgba(23,32,30,.2);padding:8px 14px">TODO-VERIFY &middot; availability and prices carried over from the current site</span></div>
-</section>
-
-<!-- 06 PARTNERS -->
-<section id="partners" class="px sec" style="padding:144px 72px 0">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center">
-<span style="grid-column:1 / span 3;display:flex;align-items:center;gap:16px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#0B4F42"><span aria-hidden="true" style="display:block;width:32px;height:1px;background:#C2A267"></span>06 &mdash; Our Partners</span>
-<div class="cols4" style="grid-column:4 / span 9;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(23,32,30,.14);border-bottom:1px solid rgba(23,32,30,.14)">
-<div style="display:flex;align-items:center;justify-content:center;height:168px"><img loading="lazy" decoding="async" src="assets/img/partner1.png" alt="Partner logo" style="display:block;width:148px;height:100px;object-fit:contain;filter:grayscale(1);opacity:.75"></div>
-<div style="display:flex;align-items:center;justify-content:center;height:168px;border-left:1px solid rgba(23,32,30,.14)"><img loading="lazy" decoding="async" src="assets/img/partner2.png" alt="Partner logo" style="display:block;width:148px;height:100px;object-fit:contain;filter:grayscale(1);opacity:.75"></div>
-<div style="display:flex;align-items:center;justify-content:center;height:168px;border-left:1px solid rgba(23,32,30,.14)"><img loading="lazy" decoding="async" src="assets/img/partner3.png" alt="Partner logo" style="display:block;width:148px;height:100px;object-fit:contain;filter:grayscale(1);opacity:.75"></div>
-<div style="display:flex;align-items:center;justify-content:center;height:168px;border-left:1px solid rgba(23,32,30,.14)"><img loading="lazy" decoding="async" src="assets/img/partner4.png" alt="Partner logo" style="display:block;width:148px;height:100px;object-fit:contain;filter:grayscale(1);opacity:.75"></div>
+<div class="a-feat-grid">
+<ol class="a-feat-list">
+<li class="is-on"><a class="a-feat-link" href="#features" data-modal="feature" data-num="01" data-title="Face ID Entry" data-img="assets/img/feat1.jpg" aria-haspopup="dialog"><span class="n">01</span><span class="t">Face ID Entry</span><span class="plus" aria-hidden="true">+</span></a></li>
+<li><a class="a-feat-link" href="#features" data-modal="feature" data-num="02" data-title="Storage Rooms" data-img="assets/img/feat2.jpg" aria-haspopup="dialog"><span class="n">02</span><span class="t">Storage Rooms</span><span class="plus" aria-hidden="true">+</span></a></li>
+<li><a class="a-feat-link" href="#features" data-modal="feature" data-num="03" data-title="Underground Parking" data-img="assets/img/feat3.jpg" aria-haspopup="dialog"><span class="n">03</span><span class="t">Underground Parking</span><span class="plus" aria-hidden="true">+</span></a></li>
+<li><a class="a-feat-link" href="#features" data-modal="feature" data-num="04" data-title="High-Performance Glazing" data-img="assets/img/feat4.jpg" aria-haspopup="dialog"><span class="n">04</span><span class="t">High-Performance Glazing</span><span class="plus" aria-hidden="true">+</span></a></li>
+<li><a class="a-feat-link" href="#features" data-modal="feature" data-num="05" data-title="Wi-Fi in the Lobby &amp; Park" data-img="assets/img/feat5.jpg" aria-haspopup="dialog"><span class="n">05</span><span class="t">Wi-Fi in the Lobby &amp; Park</span><span class="plus" aria-hidden="true">+</span></a></li>
+<li><a class="a-feat-link" href="#features" data-modal="feature" data-num="06" data-title="Smart Floor App" data-img="assets/img/feat6.jpg" aria-haspopup="dialog"><span class="n">06</span><span class="t">Smart Floor App</span><span class="plus" aria-hidden="true">+</span></a></li>
+<li><a class="a-feat-link" href="#features" data-modal="feature" data-num="07" data-title="Digital Elevator" data-img="assets/img/feat7.jpg" aria-haspopup="dialog"><span class="n">07</span><span class="t">Digital Elevator</span><span class="plus" aria-hidden="true">+</span></a></li>
+<li><a class="a-feat-link" href="#features" data-modal="feature" data-num="08" data-title="24/7 Security &amp; Surveillance" data-img="assets/img/feat8.jpg" aria-haspopup="dialog"><span class="n">08</span><span class="t">24/7 Security &amp; Surveillance</span><span class="plus" aria-hidden="true">+</span></a></li>
+</ol>
+<div class="a-feat-frame" aria-hidden="true">
+<img class="is-on" src="assets/img/feat1.jpg" alt="" loading="lazy" decoding="async">
+<img src="assets/img/feat2.jpg" alt="" loading="lazy" decoding="async">
+<img src="assets/img/feat3.jpg" alt="" loading="lazy" decoding="async">
+<img src="assets/img/feat4.jpg" alt="" loading="lazy" decoding="async">
+<img src="assets/img/feat5.jpg" alt="" loading="lazy" decoding="async">
+<img src="assets/img/feat6.jpg" alt="" loading="lazy" decoding="async">
+<img src="assets/img/feat7.jpg" alt="" loading="lazy" decoding="async">
+<img src="assets/img/feat8.jpg" alt="" loading="lazy" decoding="async">
+<span class="a-feat-count">01 / 08</span>
 </div>
 </div>
 </section>
 
-<!-- 07 IN THEIR WORDS -->
-<section id="voices" class="px sec" style="padding:144px 72px 144px">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;margin-bottom:72px">
-<span style="grid-column:1 / span 3;display:flex;align-items:center;gap:16px;align-self:start;margin-top:14px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#0B4F42"><span aria-hidden="true" style="display:block;width:32px;height:1px;background:#C2A267"></span>07 &mdash; In Their Words</span>
-<h2 style="grid-column:4 / span 8;margin:0;font-weight:300;font-size:clamp(1.75rem,3.1vw,3rem);line-height:1.24;letter-spacing:-.03em;text-wrap:balance">From the businesses that call the Harbour <em style="font-style:italic;font-weight:300;letter-spacing:-.02em;color:#0B4F42">home.</em></h2>
+<!-- SPACES -->
+<section id="spaces" class="a-rail" data-chapter="Spaces">
+<div class="a-rail-stage">
+<div class="a-rail-head">
+<div><span class="a-label">Available spaces</span><h2 class="a-h2">Find your <em>space.</em></h2></div>
+<p class="a-lead">Designed for today&rsquo;s professionals and tomorrow&rsquo;s leaders, our spaces provide the foundation for exceptional business performance.</p>
 </div>
-<div class="cols3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:48px">
-<figure style="margin:0;padding-top:32px;border-top:1px solid rgba(23,32,30,.14);display:flex;flex-direction:column;gap:32px">
-<span aria-hidden="true" style="font-weight:200;font-size:64px;line-height:.5;color:#C2A267">&ldquo;</span>
-<blockquote style="margin:0;font-size:16px;font-weight:300;line-height:1.85;color:#17201E;text-wrap:pretty">The location, infrastructure, and business community make this an exceptional place to operate. From day one, we experienced a seamless transition and gained access to an environment designed for productivity, collaboration, and business success.</blockquote>
-<figcaption style="display:flex;align-items:center;gap:16px;margin-top:auto"><span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(11,79,66,.4);border-radius:50%;font-size:12px;font-weight:500;letter-spacing:.06em;color:#0B4F42">ER</span><span style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14px;font-weight:500">Emma Richardson</span><span style="font-size:12px;font-weight:300;color:#566260">Founder &amp; CEO, Nexus Advisory Group</span></span></figcaption>
-</figure>
-<figure style="margin:0;padding-top:32px;border-top:1px solid rgba(23,32,30,.14);display:flex;flex-direction:column;gap:32px">
-<span aria-hidden="true" style="font-weight:200;font-size:64px;line-height:.5;color:#C2A267">&ldquo;</span>
-<blockquote style="margin:0;font-size:16px;font-weight:300;line-height:1.85;color:#17201E;text-wrap:pretty">Our clients immediately recognize the value of our location. The professional environment enhances our reputation, while the amenities and accessibility create a better experience for both employees and visitors.</blockquote>
-<figcaption style="display:flex;align-items:center;gap:16px;margin-top:auto"><span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(11,79,66,.4);border-radius:50%;font-size:12px;font-weight:500;letter-spacing:.06em;color:#0B4F42">HK</span><span style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14px;font-weight:500">Haris Karnel</span><span style="font-size:12px;font-weight:300;color:#566260">Founder &amp; CEO, NextGen AI labs</span></span></figcaption>
-</figure>
-<figure style="margin:0;padding-top:32px;border-top:1px solid rgba(23,32,30,.14);display:flex;flex-direction:column;gap:32px">
-<span aria-hidden="true" style="font-weight:200;font-size:64px;line-height:.5;color:#C2A267">&ldquo;</span>
-<blockquote style="margin:0;font-size:16px;font-weight:300;line-height:1.85;color:#17201E;text-wrap:pretty">Finding the right office space was critical to our growth strategy. The combination of premium facilities, professional management, and a highly connected business environment has exceeded our expectations.</blockquote>
-<figcaption style="display:flex;align-items:center;gap:16px;margin-top:auto"><span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(11,79,66,.4);border-radius:50%;font-size:12px;font-weight:500;letter-spacing:.06em;color:#0B4F42">E</span><span style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14px;font-weight:500">Elis</span><span style="font-size:12px;font-weight:300;color:#566260">Chief Operating Officer, Nexus Advisory Group</span></span></figcaption>
-</figure>
+<div class="a-rail-track">
+<a class="a-rcard" href="#spaces" data-modal="space" data-kind="office" data-num="01" data-avail="414 available" data-title="Office Space" data-price="From $50.00 / hour" data-img="assets/img/space1.jpg" data-img2="assets/img/space2.jpg" aria-haspopup="dialog"><img src="assets/img/space1.jpg" alt="Twin towers rising out of morning haze" loading="lazy" decoding="async"><span class="top"><span class="no">01</span><span class="av">414 available</span></span><span class="meta"><span class="nm" style="display:block">Office Space</span><span class="pr" style="display:block">From $50.00 / hour</span><span class="go">View &rarr;</span></span></a>
+<a class="a-rcard" href="#spaces" data-modal="space" data-kind="office" data-num="02" data-avail="140 available" data-title="Office Space" data-price="From $440.00 / day" data-img="assets/img/space2.jpg" data-img2="assets/img/space3.jpg" aria-haspopup="dialog"><img src="assets/img/space2.jpg" alt="Green-glazed towers against a deep blue sky" loading="lazy" decoding="async"><span class="top"><span class="no">02</span><span class="av">140 available</span></span><span class="meta"><span class="nm" style="display:block">Office Space</span><span class="pr" style="display:block">From $440.00 / day</span><span class="go">View &rarr;</span></span></a>
+<a class="a-rcard" href="#spaces" data-modal="space" data-kind="meeting" data-num="03" data-avail="452 available" data-title="Business Meeting Space" data-price="From $145.00 / day" data-img="assets/img/space3.jpg" data-img2="assets/img/space4.jpg" aria-haspopup="dialog"><img src="assets/img/space3.jpg" alt="The two Harbour towers seen from the street" loading="lazy" decoding="async"><span class="top"><span class="no">03</span><span class="av">452 available</span></span><span class="meta"><span class="nm" style="display:block">Business Meeting Space</span><span class="pr" style="display:block">From $145.00 / day</span><span class="go">View &rarr;</span></span></a>
+<a class="a-rcard" href="#spaces" data-modal="space" data-kind="office" data-num="04" data-avail="350 available" data-title="Office Space" data-price="From $520.00 / day" data-img="assets/img/space4.jpg" data-img2="assets/img/space5.jpg" aria-haspopup="dialog"><img src="assets/img/space4.jpg" alt="Sunset light on the green towers" loading="lazy" decoding="async"><span class="top"><span class="no">04</span><span class="av">350 available</span></span><span class="meta"><span class="nm" style="display:block">Office Space</span><span class="pr" style="display:block">From $520.00 / day</span><span class="go">View &rarr;</span></span></a>
+<a class="a-rcard" href="#spaces" data-modal="space" data-kind="parking" data-num="05" data-avail="500 available" data-title="Car Parking Space" data-price="From $20.00 / day" data-img="assets/img/space5.jpg" data-img2="assets/img/space6.jpg" aria-haspopup="dialog"><img src="assets/img/space5.jpg" alt="The two towers framed by a blue sky" loading="lazy" decoding="async"><span class="top"><span class="no">05</span><span class="av">500 available</span></span><span class="meta"><span class="nm" style="display:block">Car Parking Space</span><span class="pr" style="display:block">From $20.00 / day</span><span class="go">View &rarr;</span></span></a>
+<a class="a-rcard" href="#spaces" data-modal="space" data-kind="meeting" data-num="06" data-avail="20 available" data-title="Business Meeting Space" data-price="From $500.00 / day" data-img="assets/img/space6.jpg" data-img2="assets/img/space1.jpg" aria-haspopup="dialog"><img src="assets/img/space6.jpg" alt="A lit tower against the night sky" loading="lazy" decoding="async"><span class="top"><span class="no">06</span><span class="av">20 available</span></span><span class="meta"><span class="nm" style="display:block">Business Meeting Space</span><span class="pr" style="display:block">From $500.00 / day</span><span class="go">View &rarr;</span></span></a>
 </div>
-<div class="todo" style="display:flex;justify-content:flex-end;margin-top:56px"><span style="font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#566260;border:1px solid rgba(23,32,30,.2);padding:8px 14px">TODO-VERIFY &middot; testimonials carried over from the current site</span></div>
+<div class="a-rail-bar" aria-hidden="true"><i></i></div>
+</div>
+<p class="todo a-todo" style="padding:0 var(--gut) 48px">TODO-VERIFY &middot; availability and prices carried over from the current site</p>
 </section>
 
-<!-- 08 LANDMARK ADDRESS -->
-<section id="landmark" style="position:relative;height:720px;overflow:hidden;background:#06302A;color:#fff">
-<img loading="lazy" decoding="async" src="assets/img/landmark-band.jpg" alt="The Harbour towers from the air, above the Manama waterfront" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block">
+<!-- LANDMARK -->
+<section id="landmark" class="a-land" data-chapter="Landmark">
+<img class="fill" src="assets/img/landmark-band.jpg" alt="The Harbour towers from the air, above the Manama waterfront" loading="lazy" decoding="async">
 <video class="bgvid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="https://bfh.dorio.io/videos/landmark.mp4" style="object-position:50% 35%"></video>
-<div aria-hidden="true" style="position:absolute;top:0;right:0;bottom:0;left:0;background:linear-gradient(90deg,rgba(4,18,16,.82) 0%,rgba(4,18,16,.5) 48%,rgba(4,18,16,.08) 100%),linear-gradient(0deg,rgba(4,18,16,.55) 0%,rgba(4,18,16,0) 40%)"></div>
-<div class="px" style="position:absolute;top:0;left:0;right:0;bottom:0;padding:96px 72px;display:flex;flex-direction:column;justify-content:space-between">
-<span style="display:flex;align-items:center;gap:16px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#D9BE8A"><span aria-hidden="true" style="display:block;width:32px;height:1px;background:#D9BE8A"></span>08 &mdash; Business Center</span>
-<div>
-<h2 style="margin:0;font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:200;font-size:clamp(3rem,7.4vw,7.5rem);line-height:.98;letter-spacing:-.03em;text-transform:uppercase">A landmark<br>address</h2>
-<p style="margin:28px 0 0;font-style:italic;font-weight:200;font-size:clamp(1.25rem,2.2vw,2.125rem);line-height:1.2;color:#D9BE8A">for modern business.</p>
-</div>
+<div class="a-land-shade" aria-hidden="true"></div>
+<div class="a-land-in">
+<span class="a-label">Business Center</span>
+<h2 class="a-h2">A landmark <em>address</em> for modern business.</h2>
 </div>
 </section>
 
-<!-- founder -->
-<section id="founder" class="px sec" style="padding:144px 72px 144px">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px">
-<div style="grid-column:1 / span 6;display:flex;flex-direction:column">
-<h2 style="margin:0;font-weight:300;font-size:clamp(1.75rem,3.1vw,3rem);line-height:1.24;letter-spacing:-.03em;text-wrap:balance">Discover a business destination designed to support growth, inspire innovation, and deliver lasting value for every enterprise.</h2>
-<blockquote style="margin:64px 0 0;padding-left:28px;border-left:1px solid #C2A267;font-style:italic;font-weight:300;font-size:clamp(1.125rem,1.6vw,1.5rem);line-height:1.55;color:#0B4F42;text-wrap:pretty">&ldquo;Where visionary businesses establish their presence, build stronger relationships, and grow with confidence in an environment designed for innovation and lasting success.&rdquo;</blockquote>
-<div style="display:flex;align-items:center;gap:16px;margin-top:36px"><img loading="lazy" decoding="async" src="assets/img/founder.jpg" alt="Esam Janahi" style="display:block;width:56px;height:56px;border-radius:50%;object-fit:cover"><span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:15px;font-weight:500">Esam Janahi</span><span style="font-size:12px;font-weight:300;letter-spacing:.06em;color:#566260">Founder at BFH</span></span></div>
-<a class="card" href="#founder" data-modal="video" data-title="Engineer interview" data-src="https://res.cloudinary.com/ryibkem1/video/upload/v1791130690/slider-video.mp4" data-poster="assets/img/founder-thumb.jpg" aria-haspopup="dialog" style="display:block;margin-top:72px">
-<div style="position:relative;height:427px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/founder-thumb.jpg" alt="The Harbour towers at dusk, interview preview" style="display:block;width:100%;height:100%;object-fit:cover">
-<video class="bgvid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="https://res.cloudinary.com/ryibkem1/video/upload/v1791130690/slider-video.mp4"></video>
-<span aria-hidden="true" style="position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;background:#0B4F42;display:flex;align-items:center;justify-content:center"><span style="width:0;height:0;margin-left:5px;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent"></span></span></div>
-<div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:14px;border-top:1px solid rgba(23,32,30,.14);font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#566260"><span>Engineer interview</span><span style="color:#0B4F42">Watch &rarr;</span></div>
+<!-- SERVICES -->
+<section id="services" class="a-ch a-serv" data-chapter="Services">
+<div class="a-serv-head">
+<div><span class="a-label">Services</span><h2 class="a-h2" style="margin-top:36px">Spaces that <em>simply work.</em></h2></div>
+<p class="a-lead">A fully managed workplace ecosystem combining building operations, digital infrastructure, security, and tenant support in one seamless experience.</p>
+</div>
+<div class="a-serv-grid">
+<div class="a-serv-item"><div class="im"><img src="assets/img/about1.jpg" alt="The Harbour towers above the plaza" loading="lazy" decoding="async"></div><div class="no">01</div><h3>Hub Control Center</h3><p>Video cameras in the complex send data to a single control room, while the Alpha Open software platform collects and processes data on the operation of engineering communications.</p></div>
+<div class="a-serv-item"><div class="im"><img src="assets/img/work2.jpg" alt="The Harbour towers behind a lit bridge at night" loading="lazy" decoding="async"></div><div class="no">02</div><h3>Smart Access &amp; Security</h3><p>Provide employees and visitors with secure, seamless entry through smart access systems, digital credentials, visitor management, and 24/7 monitoring, ensuring safety, efficiency, and confidence throughout every part of the workplace experience.</p></div>
+<div class="a-serv-item"><div class="im"><img src="assets/img/work3.jpg" alt="A tenant entrance on the Harbour plaza" loading="lazy" decoding="async"></div><div class="no">03</div><h3>Enterprise Connectivity</h3><p>Keep your business connected with high-speed fiber internet, secure network infrastructure, redundant connectivity systems, and scalable bandwidth solutions designed to support modern teams and critical operations.</p></div>
+</div>
+</section>
+
+<!-- IN THEIR WORDS -->
+<section id="voices" class="a-ch a-voices" data-chapter="In their words">
+<div class="a-voices-grid">
+<div class="a-voices-left"><span class="a-label">In their words</span><h2 class="a-h2">From the businesses that call the Harbour <em>home.</em></h2></div>
+<div>
+<blockquote class="a-quote"><p>&ldquo;The location, infrastructure, and business community make this an exceptional place to operate. From day one, we experienced a seamless transition and gained access to an environment designed for productivity, collaboration, and business success.&rdquo;</p><footer><span class="av" aria-hidden="true">ER</span><span class="who"><b>Emma Richardson</b><span>Founder &amp; CEO, Nexus Advisory Group</span></span></footer></blockquote>
+<blockquote class="a-quote"><p>&ldquo;Our clients immediately recognize the value of our location. The professional environment enhances our reputation, while the amenities and accessibility create a better experience for both employees and visitors.&rdquo;</p><footer><span class="av" aria-hidden="true">HK</span><span class="who"><b>Haris Karnel</b><span>Founder &amp; CEO, NextGen AI labs</span></span></footer></blockquote>
+<blockquote class="a-quote"><p>&ldquo;Finding the right office space was critical to our growth strategy. The combination of premium facilities, professional management, and a highly connected business environment has exceeded our expectations.&rdquo;</p><footer><span class="av" aria-hidden="true">E</span><span class="who"><b>Elis</b><span>Chief Operating Officer, Nexus Advisory Group</span></span></footer></blockquote>
+<p class="todo a-todo">TODO-VERIFY &middot; testimonials carried over from the current site</p>
+</div>
+</div>
+<div class="a-partners">
+<span class="a-label">Our partners</span>
+<div class="logos"><img src="assets/img/partner1.png" alt="Partner logo"><img src="assets/img/partner2.png" alt="Partner logo"><img src="assets/img/partner3.png" alt="Partner logo"><img src="assets/img/partner4.png" alt="Partner logo"></div>
+</div>
+<div id="founder" class="a-founder">
+<div>
+<p class="a-lead" style="max-width:34ch;font-size:clamp(1.25rem,2vw,1.875rem);line-height:1.45;color:#fff">Discover a business destination designed to support growth, inspire innovation, and deliver lasting value for every enterprise.</p>
+<blockquote style="margin:40px 0 0;padding-left:28px;border-left:1px solid #C2A267;font-style:italic;font-weight:300;font-size:clamp(1.125rem,1.7vw,1.625rem);line-height:1.55;color:#D9BE8A;text-wrap:pretty">&ldquo;Where visionary businesses establish their presence, build stronger relationships, and grow with confidence in an environment designed for innovation and lasting success.&rdquo;</blockquote>
+<div class="a-person"><img src="assets/img/founder.jpg" alt="Esam Janahi" loading="lazy" decoding="async" width="56" height="56"><span><b>Esam Janahi</b><span>Founder at BFH</span></span></div>
+<a class="a-iv" href="#founder" data-modal="video" data-title="Engineer interview" data-src="https://res.cloudinary.com/ryibkem1/video/upload/v1791130690/slider-video.mp4" data-poster="assets/img/founder-thumb.jpg" aria-haspopup="dialog">
+<span class="ph"><img src="assets/img/founder-thumb.jpg" alt="The Harbour towers at dusk, interview preview" loading="lazy" decoding="async"><video class="bgvid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="https://res.cloudinary.com/ryibkem1/video/upload/v1791130690/slider-video.mp4"></video><span class="play" aria-hidden="true"><i></i></span></span>
+<span class="cap"><span>Engineer interview</span><b>Watch &rarr;</b></span>
 </a>
 </div>
-<div class="founder-photo" style="grid-column:8 / span 5;position:relative;min-height:760px;overflow:hidden;background:#d9d6cf">
-<img loading="lazy" decoding="async" src="assets/img/founder-bw.jpg" alt="Three towers on the waterfront at dusk, shown in black and white" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05)">
+<div class="a-sail"><img src="assets/img/founder-bw.jpg" alt="Three towers on the waterfront at dusk, shown in black and white" loading="lazy" decoding="async"></div>
+</div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="a-ch a-loc" data-chapter="Location">
+<span class="a-label">Location</span>
+<div class="a-loc-grid">
+<div class="a-coord"><b>26.238312</b><span>Latitude</span></div>
+<div class="a-coord"><b>50.571172</b><span>Longitude</span></div>
+</div>
+<div class="a-loc-body">
+<div class="a-addr">Bahrain Financial Harbour<br>6HQC+8FF, King Faisal Hwy,<br>Manama, Bahrain<br><a class="navlink" href="https://www.openstreetmap.org/?mlat=26.238312&amp;mlon=50.571172#map=16/26.238312/50.571172" target="_blank" rel="noopener">Open map</a></div>
+<div>
+<ul class="a-reach">
+<li><span>Bahrain International Airport</span><b>10 minutes&rsquo; drive</b></li>
+<li><span>Riyadh, Kuwait, Abu Dhabi, Dubai and Doha</span><b>About an hour&rsquo;s flight</b></li>
+</ul>
+<a class="a-why" href="why-bahrain/">Why Bahrain? Six reasons <span aria-hidden="true">&rarr;</span></a>
 </div>
 </div>
 </section>
 
-<!-- 09 SMART FEATURES -->
-<section id="features" class="px sec" style="padding:144px 72px;background:#F3F1EC">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;margin-bottom:80px">
-<span style="grid-column:1 / span 3;display:flex;align-items:center;gap:16px;align-self:start;margin-top:14px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#0B4F42"><span aria-hidden="true" style="display:block;width:32px;height:1px;background:#C2A267"></span>09 &mdash; Know More</span>
-<h2 style="grid-column:4 / span 9;margin:0;font-weight:300;font-size:clamp(1.75rem,3.1vw,3rem);line-height:1.24;letter-spacing:-.03em;text-wrap:balance">A full suite of advanced engineering solutions and <em style="font-style:italic;font-weight:300;letter-spacing:-.02em;color:#0B4F42">smart features.</em></h2>
+<!-- ARRIVAL -->
+<section id="visit" class="a-cta" data-chapter="Arrival">
+<img class="fill" src="assets/img/bfh-tower.jpg" alt="The BFH tower above Manama and the bay" loading="lazy" decoding="async">
+<div class="a-cta-shade" aria-hidden="true"></div>
+<div class="a-cta-in">
+<span class="a-label">Visit</span>
+<div>
+<h2 class="a-h2">Take your place in the <em>Harbour.</em></h2>
+<div class="a-btns" style="margin-top:44px">
+<a class="btn" href="#spaces" style="border-color:#D9BE8A;color:#D9BE8A"><span>Explore the Harbour</span></a>
+<a class="btn" href="#enquire" style="border-color:rgba(255,255,255,.55);color:#fff"><span>Enquire about leasing</span></a>
 </div>
-<div class="cols4" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:24px;row-gap:56px">
-
-<a class="card" href="#features" data-modal="feature" data-num="01" data-title="Face ID Entry" data-img="assets/img/feat1.jpg" aria-haspopup="dialog" style="display:block"><div style="height:330px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/feat1.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"></div><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:18px"><div><span style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#0B4F42">01</span><div style="margin-top:8px;font-size:16px;font-weight:300;line-height:1.4">Face ID Entry</div></div><span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(23,32,30,.22);border-radius:50%;font-size:18px;font-weight:200;line-height:1">+</span></div></a>
-
-<a class="card" href="#features" data-modal="feature" data-num="02" data-title="Storage Rooms" data-img="assets/img/feat2.jpg" aria-haspopup="dialog" style="display:block"><div style="height:330px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/feat2.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"></div><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:18px"><div><span style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#0B4F42">02</span><div style="margin-top:8px;font-size:16px;font-weight:300;line-height:1.4">Storage Rooms</div></div><span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(23,32,30,.22);border-radius:50%;font-size:18px;font-weight:200;line-height:1">+</span></div></a>
-
-<a class="card" href="#features" data-modal="feature" data-num="03" data-title="Underground Parking" data-img="assets/img/feat3.jpg" aria-haspopup="dialog" style="display:block"><div style="height:330px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/feat3.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"></div><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:18px"><div><span style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#0B4F42">03</span><div style="margin-top:8px;font-size:16px;font-weight:300;line-height:1.4">Underground Parking</div></div><span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(23,32,30,.22);border-radius:50%;font-size:18px;font-weight:200;line-height:1">+</span></div></a>
-
-<a class="card" href="#features" data-modal="feature" data-num="04" data-title="High-Performance Glazing" data-img="assets/img/feat4.jpg" aria-haspopup="dialog" style="display:block"><div style="height:330px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/feat4.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"></div><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:18px"><div><span style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#0B4F42">04</span><div style="margin-top:8px;font-size:16px;font-weight:300;line-height:1.4">High-Performance Glazing</div></div><span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(23,32,30,.22);border-radius:50%;font-size:18px;font-weight:200;line-height:1">+</span></div></a>
-
-<a class="card" href="#features" data-modal="feature" data-num="05" data-title="Wi-Fi in the Lobby &amp; Park" data-img="assets/img/feat5.jpg" aria-haspopup="dialog" style="display:block"><div style="height:330px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/feat5.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"></div><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:18px"><div><span style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#0B4F42">05</span><div style="margin-top:8px;font-size:16px;font-weight:300;line-height:1.4">Wi-Fi in the Lobby &amp; Park</div></div><span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(23,32,30,.22);border-radius:50%;font-size:18px;font-weight:200;line-height:1">+</span></div></a>
-
-<a class="card" href="#features" data-modal="feature" data-num="06" data-title="Smart Floor App" data-img="assets/img/feat6.jpg" aria-haspopup="dialog" style="display:block"><div style="height:330px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/feat6.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"></div><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:18px"><div><span style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#0B4F42">06</span><div style="margin-top:8px;font-size:16px;font-weight:300;line-height:1.4">Smart Floor App</div></div><span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(23,32,30,.22);border-radius:50%;font-size:18px;font-weight:200;line-height:1">+</span></div></a>
-
-<a class="card" href="#features" data-modal="feature" data-num="07" data-title="Digital Elevator" data-img="assets/img/feat7.jpg" aria-haspopup="dialog" style="display:block"><div style="height:330px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/feat7.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"></div><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:18px"><div><span style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#0B4F42">07</span><div style="margin-top:8px;font-size:16px;font-weight:300;line-height:1.4">Digital Elevator</div></div><span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(23,32,30,.22);border-radius:50%;font-size:18px;font-weight:200;line-height:1">+</span></div></a>
-
-<a class="card" href="#features" data-modal="feature" data-num="08" data-title="24/7 Security &amp; Surveillance" data-img="assets/img/feat8.jpg" aria-haspopup="dialog" style="display:block"><div style="height:330px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/feat8.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover"></div><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:18px"><div><span style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#0B4F42">08</span><div style="margin-top:8px;font-size:16px;font-weight:300;line-height:1.4">24/7 Security &amp; Surveillance</div></div><span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(23,32,30,.22);border-radius:50%;font-size:18px;font-weight:200;line-height:1">+</span></div></a>
-
-</div>
-</section>
-
-<!-- 10 LOCATION -->
-<section id="location" class="px sec" style="padding:144px 72px;background:#04201C;color:#fff">
-<span style="display:flex;align-items:center;gap:16px;margin-bottom:72px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#D9BE8A"><span aria-hidden="true" style="display:block;width:32px;height:1px;background:#D9BE8A"></span>10 &mdash; Location</span>
-<div class="cols3" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:72px">
-<div style="padding-right:40px"><div style="font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:200;font-size:clamp(3rem,6.2vw,6.25rem);line-height:.95;letter-spacing:-.04em;font-variant-numeric:tabular-nums lining-nums">26.238312</div><div style="margin-top:20px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.72)">Latitude</div></div>
-<div style="padding-left:40px;border-left:1px solid rgba(255,255,255,.2)"><div style="font-family:'Google Sans Flex','Poppins',sans-serif;font-weight:200;font-size:clamp(3rem,6.2vw,6.25rem);line-height:.95;letter-spacing:-.04em;font-variant-numeric:tabular-nums lining-nums">50.571172</div><div style="margin-top:20px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.72)">Longitude</div></div>
-</div>
-<div class="map" style="position:relative;height:440px;overflow:hidden;border:1px solid rgba(255,255,255,.18);background:#06302A">
-<iframe title="Map showing Bahrain Financial Harbour, Manama" src="https://www.openstreetmap.org/export/embed.html?bbox=50.5600%2C26.2300%2C50.5820%2C26.2470&amp;layer=mapnik&amp;marker=26.238312%2C50.571172" loading="lazy" referrerpolicy="no-referrer" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;filter:grayscale(1) contrast(.92) brightness(.9)"></iframe>
-<div class="map-card" style="position:absolute;left:32px;bottom:32px;background:rgba(251,250,247,.96);color:#17201E;padding:18px 24px;max-width:300px"><div style="font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#0B4F42">Bahrain Financial Harbour</div><div style="margin-top:10px;font-size:14px;font-weight:300;line-height:1.7">6HQC+8FF, King Faisal Hwy,<br>Manama, Bahrain</div><a class="navlink" href="https://www.openstreetmap.org/?mlat=26.238312&amp;mlon=50.571172#map=16/26.238312/50.571172" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#0B4F42;border-bottom:1px solid #C2A267;padding-bottom:5px">Open map</a></div>
-</div>
-</section>
-
-<!-- 11 SERVICES -->
-<section id="services" class="px sec" style="padding:144px 72px">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;margin-bottom:80px">
-<span style="grid-column:1 / span 3;display:flex;align-items:center;gap:16px;align-self:start;margin-top:22px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#0B4F42"><span aria-hidden="true" style="display:block;width:32px;height:1px;background:#C2A267"></span>11 &mdash; Services</span>
-<h2 style="grid-column:4 / span 9;margin:0;font-weight:200;font-size:clamp(2.75rem,5.8vw,5.75rem);line-height:1.06;letter-spacing:-.035em;text-wrap:balance">Spaces that <em style="font-style:italic;font-weight:300;letter-spacing:-.02em;color:#0B4F42">simply work.</em></h2>
-<p style="grid-column:4 / span 5;margin:40px 0 0;font-size:17px;font-weight:300;line-height:1.85;color:#566260;text-wrap:pretty">A fully managed workplace ecosystem combining building operations, digital infrastructure, security, and tenant support in one seamless experience.</p>
-</div>
-<div class="cols3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:48px">
-<div style="display:flex;flex-direction:column">
-<div style="height:380px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/about1.jpg" alt="The Harbour towers above the plaza" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%"></div>
-<div style="display:flex;align-items:baseline;justify-content:space-between;margin-top:28px;padding-top:18px;border-top:1px solid rgba(23,32,30,.14)"><span style="font-weight:200;font-size:44px;line-height:1;letter-spacing:-.03em">01</span><span style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#566260">/ 03</span></div>
-<h3 style="margin:20px 0 0;font-size:20px;font-weight:300;letter-spacing:-.01em;text-transform:uppercase">Hub Control Center</h3>
-<p style="margin:14px 0 0;font-size:15px;font-weight:300;line-height:1.8;color:#566260;text-wrap:pretty">Video cameras in the complex send data to a single control room, while the Alpha Open software platform collects and processes data on the operation of engineering communications.</p>
-</div>
-<div style="display:flex;flex-direction:column">
-<div style="height:380px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/work2.jpg" alt="The Harbour towers behind a lit bridge at night" style="display:block;width:100%;height:100%;object-fit:cover"></div>
-<div style="display:flex;align-items:baseline;justify-content:space-between;margin-top:28px;padding-top:18px;border-top:1px solid rgba(23,32,30,.14)"><span style="font-weight:200;font-size:44px;line-height:1;letter-spacing:-.03em">02</span><span style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#566260">/ 03</span></div>
-<h3 style="margin:20px 0 0;font-size:20px;font-weight:300;letter-spacing:-.01em;text-transform:uppercase">Smart Access &amp; Security</h3>
-<p style="margin:14px 0 0;font-size:15px;font-weight:300;line-height:1.8;color:#566260;text-wrap:pretty">Provide employees and visitors with secure, seamless entry through smart access systems, digital credentials, visitor management, and 24/7 monitoring, ensuring safety, efficiency, and confidence throughout every part of the workplace experience.</p>
-</div>
-<div style="display:flex;flex-direction:column">
-<div style="height:380px;overflow:hidden;background:#E7E4DD"><img loading="lazy" decoding="async" src="assets/img/work3.jpg" alt="A tenant entrance on the Harbour plaza" style="display:block;width:100%;height:100%;object-fit:cover"></div>
-<div style="display:flex;align-items:baseline;justify-content:space-between;margin-top:28px;padding-top:18px;border-top:1px solid rgba(23,32,30,.14)"><span style="font-weight:200;font-size:44px;line-height:1;letter-spacing:-.03em">03</span><span style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#566260">/ 03</span></div>
-<h3 style="margin:20px 0 0;font-size:20px;font-weight:300;letter-spacing:-.01em;text-transform:uppercase">Enterprise Connectivity</h3>
-<p style="margin:14px 0 0;font-size:15px;font-weight:300;line-height:1.8;color:#566260;text-wrap:pretty">Keep your business connected with high-speed fiber internet, secure network infrastructure, redundant connectivity systems, and scalable bandwidth solutions designed to support modern teams and critical operations.</p>
 </div>
 </div>
 </section>
 
 <!-- 12 ENQUIRE -->
-<section id="enquire" class="px sec" style="padding:144px 72px;background:#F3F1EC">
+<section id="enquire" class="a-enq" data-chapter="Enquire">
 <div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px">
 <div style="grid-column:1 / span 5">
 <span class="enq-label"><i aria-hidden="true"></i>12 &mdash; Enquire</span>
@@ -459,21 +364,6 @@
 </div>
 </section>
 
-<!-- visit / CTA -->
-<section id="visit" style="position:relative;height:700px;overflow:hidden;background:#06302A;color:#fff">
-<img loading="lazy" decoding="async" src="assets/img/bfh-tower.jpg" alt="The BFH tower above Manama and the bay" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block">
-<div aria-hidden="true" style="position:absolute;top:0;right:0;bottom:0;left:0;background:linear-gradient(90deg,rgba(4,18,16,.86) 0%,rgba(4,18,16,.55) 50%,rgba(4,18,16,.1) 100%),linear-gradient(0deg,rgba(4,18,16,.6) 0%,rgba(4,18,16,0) 45%)"></div>
-<div class="px" style="position:absolute;top:0;left:0;right:0;bottom:0;padding:96px 72px;display:flex;flex-direction:column;justify-content:space-between">
-<span style="display:flex;align-items:center;gap:16px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#D9BE8A"><span aria-hidden="true" style="display:block;width:32px;height:1px;background:#D9BE8A"></span>Visit</span>
-<div style="display:flex;flex-direction:column;gap:48px;max-width:760px">
-<h2 style="margin:0;font-weight:200;font-size:clamp(2.75rem,5.8vw,5.75rem);line-height:1.04;letter-spacing:-.035em;text-wrap:balance">Take your place in the <em style="font-style:italic;font-weight:300;letter-spacing:-.02em;color:#D9BE8A">Harbour.</em></h2>
-<div class="stack-m" style="display:flex;gap:16px;flex-wrap:wrap">
-<a class="btn" href="#spaces" style="border-color:#D9BE8A;color:#D9BE8A"><span>Explore the Harbour</span></a>
-<a class="btn" href="#enquire" style="border-color:rgba(255,255,255,.55);color:#fff"><span>Enquire about leasing</span></a>
-</div>
-</div>
-</div>
-</section>
 </main>
 
 <footer class="px" style="position:relative;padding:112px 72px 48px;background:#04201C;color:#fff;overflow:hidden">
@@ -485,7 +375,7 @@
 </div>
 <div style="display:flex;flex-direction:column;gap:14px;font-size:14px;font-weight:300;line-height:1.5;color:rgba(255,255,255,.82)">
 <span style="margin-bottom:10px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#D9BE8A">Offices</span>
-<a class="navlink" href="#workspaces">Efficient Floor Plates</a><a class="navlink" href="#spaces">Meeting Your Needs</a><a class="navlink" href="#landmark">Stunning Views</a><a class="navlink" href="#visit">BFH Events</a>
+<a class="navlink" href="#spaces">Efficient Floor Plates</a><a class="navlink" href="#spaces">Meeting Your Needs</a><a class="navlink" href="#landmark">Stunning Views</a><a class="navlink" href="#visit">BFH Events</a>
 </div>
 <div style="display:flex;flex-direction:column;gap:14px;font-size:14px;font-weight:300;line-height:1.6;color:rgba(255,255,255,.82)">
 <span style="margin-bottom:10px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#D9BE8A">Find Us</span>
