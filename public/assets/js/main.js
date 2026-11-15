@@ -231,6 +231,151 @@
     modal.addEventListener('close', function () { if (!modal.open) cleanup(); });
   }
 
+  /* ---------- The Climb: pinned, scroll-driven ascent (desktop, motion allowed) ----------
+     Everywhere else the section stays a plain stack of four stops. */
+  var climb = document.getElementById('climb');
+  if (climb) {
+    var cStops = Array.prototype.slice.call(climb.querySelectorAll('.climb-stop'));
+    var cNum = climb.querySelector('[data-floor]');
+    var cMark = climb.querySelector('.climb-scale .mark');
+    var FLOORS = parseInt(climb.getAttribute('data-floors'), 10) || 53;
+    var narrowMQ = window.matchMedia('(max-width: 860px)');
+    var cCur = -1;
+
+    var climbRender = function () {
+      var pinned = !reduce && !narrowMQ.matches;
+      if (!pinned) { climb.classList.remove('climb--pinned'); cCur = -1; return; }
+      climb.classList.add('climb--pinned');
+      var r = climb.getBoundingClientRect();
+      var span = r.height - window.innerHeight;
+      var p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
+      var floor = 1 + Math.round((FLOORS - 1) * p);
+      var idx = Math.min(cStops.length - 1, Math.floor(p * cStops.length));
+      if (cNum) cNum.textContent = (floor < 10 ? '0' : '') + floor;
+      if (cMark) cMark.style.setProperty('--p', p.toFixed(4));
+      if (idx !== cCur) {
+        cStops.forEach(function (s, i) { s.classList.toggle('is-on', i === idx); });
+        cCur = idx;
+      }
+      var local = p * cStops.length - idx;   // 0 to 1 inside the current stop
+      var img = cStops[idx].querySelector('.climb-img');
+      if (img) img.style.setProperty('--sc', (1.1 - 0.07 * local).toFixed(4));
+    };
+    window.addEventListener('scroll', climbRender, { passive: true });
+    window.addEventListener('resize', climbRender);
+    climbRender();
+  }
+
+  /* ---------- enquiry form: validation, a clear success state, and a draft that is never lost ---------- */
+  var enqForm = document.getElementById('enquiry');
+  var enqDone = document.getElementById('enq-done');
+  if (enqForm && enqDone) {
+    var ENQ_FIELDS = ['name', 'company', 'email', 'phone', 'interest', 'message'];
+    var ENQ_KEY = 'bfh-enquiry-draft';
+    var enqEl = function (n) { return enqForm.elements[n]; };
+    var enqStatus = enqDone.querySelector('[data-status]');
+
+    var saveDraft = function () {
+      try {
+        var d = {};
+        ENQ_FIELDS.forEach(function (n) { d[n] = enqEl(n).value; });
+        window.localStorage.setItem(ENQ_KEY, JSON.stringify(d));
+      } catch (e) { /* storage can be blocked: the form still works */ }
+    };
+    var restoreDraft = function () {
+      try {
+        var raw = window.localStorage.getItem(ENQ_KEY);
+        if (!raw) return;
+        var d = JSON.parse(raw);
+        ENQ_FIELDS.forEach(function (n) { if (typeof d[n] === 'string') enqEl(n).value = d[n]; });
+      } catch (e) { /* ignore */ }
+    };
+    var clearDraft = function () {
+      try { window.localStorage.removeItem(ENQ_KEY); } catch (e) { /* ignore */ }
+    };
+
+    var RULES = {
+      name: function (v) { return v.trim().length < 2 ? 'Please enter your name.' : ''; },
+      email: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Please enter a valid email address.'; },
+      phone: function (v) { return !v.trim() || /^[0-9+()\s-]{6,20}$/.test(v.trim()) ? '' : 'Use digits, spaces, + and - only (6 to 20 characters).'; },
+      message: function (v) { return v.length > 1000 ? 'Please keep the message under 1000 characters.' : ''; }
+    };
+    var showError = function (n, msg) {
+      var el = enqEl(n);
+      var out = document.getElementById('err-' + n);
+      if (out) out.textContent = msg;
+      if (msg) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid');
+    };
+    var validate = function (n) {
+      var msg = RULES[n] ? RULES[n](enqEl(n).value) : '';
+      showError(n, msg);
+      return !msg;
+    };
+    var compose = function () {
+      var v = function (n) { return enqEl(n).value.trim(); };
+      var interest = v('interest') || 'Not sure yet';
+      var lines = ['Name: ' + v('name')];
+      if (v('company')) lines.push('Company: ' + v('company'));
+      lines.push('Email: ' + v('email'));
+      if (v('phone')) lines.push('Phone: ' + v('phone'));
+      lines.push('Interested in: ' + interest);
+      if (v('message')) { lines.push('', 'Message:', v('message')); }
+      return { subject: 'Leasing enquiry: ' + interest + ' (' + v('name') + ')', body: lines.join('\n') };
+    };
+    var setStatus = function (t) { if (enqStatus) enqStatus.textContent = t; };
+    var showForm = function (focusName) {
+      enqDone.hidden = true;
+      enqForm.hidden = false;
+      setStatus('');
+      if (focusName) enqEl('name').focus();
+    };
+
+    restoreDraft();
+    enqForm.addEventListener('input', saveDraft);
+    enqForm.addEventListener('change', saveDraft);
+    ['name', 'email', 'phone', 'message'].forEach(function (n) {
+      enqEl(n).addEventListener('blur', function () { if (enqEl(n).value || enqEl(n).getAttribute('aria-invalid')) validate(n); });
+      enqEl(n).addEventListener('input', function () { if (enqEl(n).getAttribute('aria-invalid')) validate(n); });
+    });
+
+    enqForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var firstBad = null;
+      ['name', 'email', 'phone', 'message'].forEach(function (n) { if (!validate(n) && !firstBad) firstBad = enqEl(n); });
+      if (firstBad) { firstBad.focus(); return; }
+      var m = compose();
+      var href = 'mailto:bfharbour@gmail.com?subject=' + encodeURIComponent(m.subject) + '&body=' + encodeURIComponent(m.body);
+      enqDone.querySelector('[data-mail]').setAttribute('href', href);
+      enqDone.querySelector('[data-wa]').setAttribute('href', 'https://wa.me/97317102600?text=' + encodeURIComponent(m.subject + '\n\n' + m.body));
+      enqDone.querySelector('[data-copy-text]').textContent = m.body;
+      saveDraft();
+      enqForm.hidden = true;
+      enqDone.hidden = false;
+      enqDone.focus({ preventScroll: true });
+      var top = enqDone.getBoundingClientRect().top + window.pageYOffset - 140;
+      if (lenis) lenis.scrollTo(Math.max(0, top)); else window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
+      window.location.href = href;   // opens the visitor's email app
+    });
+
+    enqDone.addEventListener('click', function (e) {
+      var t = e.target.closest ? e.target.closest('button') : null;
+      if (!t) return;
+      if (t.hasAttribute('data-edit')) { showForm(true); }
+      else if (t.hasAttribute('data-new')) {
+        enqForm.reset();
+        ENQ_FIELDS.forEach(function (n) { if (RULES[n]) showError(n, ''); });
+        clearDraft();
+        showForm(true);
+      } else if (t.hasAttribute('data-copy')) {
+        var text = enqDone.querySelector('[data-copy-text]').textContent;
+        var done = function () { setStatus('Copied. You can paste it into any message.'); };
+        var fail = function () { setStatus('Copy did not work here. Select the text above and copy it.'); };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fail);
+        else fail();
+      }
+    });
+  }
+
   /* ---------- background videos ----------
      The files stay on the original site's video hosts. A video only gets its source when it is
      near the screen and pauses when it leaves; nothing loads for reduced motion or data saver. */
