@@ -22,11 +22,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Google+Sans+Flex:wght@200;300;400;500&display=swap">
 <link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="../assets/css/ascent.css">
 <link rel="stylesheet" href="why.css">
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
 <script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/ascent.js" defer></script>
+<script src="why.js" defer></script>
 </head>
-<body>
+<body class="w-page">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
 <a class="logo" href="../" aria-label="Bahrain Financial Harbour, home"><img src="../assets/img/logo-white.png" alt="Bahrain Financial Harbour" width="84" height="69"></a>
@@ -71,175 +74,182 @@
 </div>
 </div>
 </div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><clipPath id="a-sail" clipPathUnits="objectBoundingBox"><path d="M0,1 L0,0.34 C0,0.12 0.2,0 0.52,0 L1,0 L1,1 Z"/></clipPath></defs></svg>
+<div class="a-gauge" aria-hidden="true"><i class="rail"></i><i class="ticks"></i><i class="mark"></i><span class="fl">1</span><span class="ch">Ground</span></div>
 
 <main id="main">
 
 <!-- HERO -->
-<section class="pg-hero" id="top">
-<img src="../assets/img/hero.jpg" alt="Aerial view of the Bahrain Financial Harbour towers on the Manama waterfront" fetchpriority="high">
-<div class="scrim" aria-hidden="true"></div>
-<div class="px hero-title-wrap" style="position:absolute;top:150px;left:0;right:0;z-index:2;padding:0 72px">
-<h1 class="pg-h1">
-<span class="mask"><span class="rise" style="animation-delay:.3s"><span class="b">W</span>hy</span></span>
-<span class="mask"><span class="rise l2" style="animation-delay:.4s"><span class="b">B</span>ahrain ?</span></span>
+<section class="hero a-hero" id="top" data-chapter="Ground">
+<img class="a-hero-img" fetchpriority="high" src="../assets/img/hero.jpg" alt="Aerial view of the Bahrain Financial Harbour towers on the Manama waterfront">
+<div class="a-hero-shade" aria-hidden="true"></div>
+<div class="hero-title-wrap a-hero-copy">
+<p class="w-crumb"><a href="../">Home</a> / <b>Why Bahrain?</b></p>
+<p class="a-kicker">Six reasons to base your business in the Kingdom, and at the Harbour.</p>
+<h1>
+<span class="mask"><span class="rise" style="animation-delay:.3s"><b>W</b>hy</span></span>
+<span class="mask"><span class="rise" style="animation-delay:.42s"><b>B</b>ahrain?</span></span>
 </h1>
 </div>
-<div class="px pg-info">
-<span class="crumb fadein"><a href="../">Home</a> / <b>Why Bahrain?</b></span>
-<span class="tag fadein">Six reasons to base your business in the Kingdom, and at the Harbour.</span>
-<span class="cue fadein"><span>Scroll down</span><i aria-hidden="true"></i></span>
+<div class="a-hero-foot fadein">
+<dl class="a-stats">
+<div><dt>Foreign ownership allowed</dt><dd><span class="count" data-to="100" data-dec="0">100</span>%</dd></div>
+<div><dt>Of GDP is non-oil</dt><dd><span class="count" data-to="80" data-dec="0">80</span>%+</dd></div>
+<div><dt>Min drive from the airport</dt><dd><span class="count" data-to="10" data-dec="0">10</span></dd></div>
+</dl>
+<a class="a-cue" href="#reasons">Scroll to climb<i aria-hidden="true"></i></a>
 </div>
 </section>
 
-<!-- THE HARBOUR -->
-<section id="reasons" class="px sec" style="padding:176px 72px 144px;background:#FBFAF7">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:56px">
-<span class="lbl" style="grid-column:1 / span 3;align-self:start;margin-top:18px">The Harbour</span>
-<h2 class="stmt" style="grid-column:4 / span 9">Bahrain Financial Harbour is a <em>symbol of ambition</em> and economic strength, offering world-class facilities, a prime waterfront location, and a dynamic hub for global finance.</h2>
+<!-- THE HARBOUR: the sentence lights up, then the six reasons -->
+<section id="reasons" class="a-mani" data-chapter="The Harbour" aria-label="The Harbour">
+<div class="a-mani-pin">
+<span class="a-label">The Harbour</span>
+<p class="a-mani-text" data-fill data-nofade>Bahrain Financial Harbour is a symbol of ambition and economic strength, offering world-class facilities, a prime waterfront location, and a dynamic hub for global finance.</p>
+<div class="a-mani-foot">
+<nav class="w-index" aria-label="The six reasons">
+<a href="#expats"><span class="n">01</span><span class="t">Expats</span></a>
+<a href="#tax"><span class="n">02</span><span class="t">Tax</span></a>
+<a href="#enterprise"><span class="n">03</span><span class="t">Enterprise</span></a>
+<a href="#location"><span class="n">04</span><span class="t">Location</span></a>
+<a href="#people"><span class="n">05</span><span class="t">People</span></a>
+<a href="#life"><span class="n">06</span><span class="t">Quality of life</span></a>
+</nav>
+</div>
 </div>
 </section>
 
 <!-- IN FIGURES -->
-<section class="figs px sec" style="padding:152px 72px">
-<img src="../assets/img/night.jpg" alt="" aria-hidden="true" loading="lazy">
-<div class="ov" aria-hidden="true"></div>
-<div class="in">
-<span class="lbl d" style="margin-bottom:72px">In figures</span>
-<div class="fig cols3">
-<div><b><span class="count" data-to="12" data-dec="0">12</span><small>th</small></b><p>Most popular destination for expats in the world, of 59 countries analysed (InterNations Expat Insider 2021)</p></div>
-<div><b><span class="count" data-to="5" data-dec="0">5</span><small>th</small></b><p>Overall globally, and 1st in the Middle East, in the HSBC expat survey</p></div>
-<div><b><span class="count" data-to="80" data-dec="0">80</span><small>%+</small></b><p>Of GDP is non-oil. The Kingdom diversified early</p></div>
-<div><b><span class="count" data-to="100" data-dec="0">100</span><small>%</small></b><p>Foreign ownership allowed, with repatriation on income</p></div>
-<div><b><span class="count" data-to="10" data-dec="0">10</span><small>min</small></b><p>Drive from Bahrain International Airport to the Harbour</p></div>
-<div><b><span class="count" data-to="166" data-dec="0">166</span></b><p>Strong support team running the Harbour, from a professional facilities management service</p></div>
-</div>
+<section id="figures" class="w-fig" data-chapter="In figures">
+<span class="a-label">In figures</span>
+<div class="w-fig-grid">
+<div><div class="num"><span class="count" data-to="12" data-dec="0">12</span><small>th</small></div><p>Most popular destination for expats in the world, of 59 countries analysed (InterNations Expat Insider 2021)</p></div>
+<div><div class="num"><span class="count" data-to="5" data-dec="0">5</span><small>th</small></div><p>Overall globally, and 1st in the Middle East, in the HSBC expat survey</p></div>
+<div><div class="num"><span class="count" data-to="80" data-dec="0">80</span><small>%+</small></div><p>Of GDP is non-oil. The Kingdom diversified early</p></div>
+<div><div class="num"><span class="count" data-to="100" data-dec="0">100</span><small>%</small></div><p>Foreign ownership allowed, with repatriation on income</p></div>
+<div><div class="num"><span class="count" data-to="10" data-dec="0">10</span><small>min</small></div><p>Drive from Bahrain International Airport to the Harbour</p></div>
+<div><div class="num"><span class="count" data-to="166" data-dec="0">166</span></div><p>Strong support team running the Harbour, from a professional facilities management service</p></div>
 </div>
 </section>
 
 <!-- 01 EXPATS -->
-<section class="chap px sec" style="padding:144px 72px;background:#FBFAF7">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:56px">
-<span class="lbl" style="grid-column:1 / span 3;align-self:start;margin-top:14px">01 &mdash; Expats</span>
-<div class="tx" style="grid-column:4 / span 4;padding-right:40px">
-<h2>Bahrain named top Middle East <em>expat destination.</em></h2>
+<section id="expats" class="w-ch w-ch--deep" data-chapter="Expats">
+<div class="w-grid">
+<div class="w-side"><div class="w-num" aria-hidden="true">01</div><span class="a-label">Expats</span><h2 class="w-h2">Bahrain named top Middle East <em>expat destination.</em></h2></div>
+<div class="w-main">
+<div class="w-copy">
 <p>Bahrain has been named the top expat destination in the Middle East, according to the InterNations Expat Insider 2021 survey.</p>
 <p>Bahrain was ranked the 12th most popular destination for expats in the world, ahead of Qatar in 17th and the UAE in 18th, out of a total of 59 countries analysed.</p>
 <p>The survey ranks countries by different factors such as the quality of life, personal finance, working abroad and making friends.</p>
 </div>
-<div style="grid-column:8 / span 5">
-<div class="ph"><img src="../assets/img/about1.jpg" alt="Two towers above the Harbour plaza under a wide sky" loading="lazy"><div class="chip"><b>12th</b><span>of 59 countries analysed</span></div></div>
-<ol class="rank">
-<li class="me"><span class="pos">12th</span><span class="nm">Bahrain</span><span class="of">of 59</span></li>
-<li><span class="pos">17th</span><span class="nm">Qatar</span><span class="of">of 59</span></li>
-<li><span class="pos">18th</span><span class="nm">United Arab Emirates</span><span class="of">of 59</span></li>
+<div class="w-rank-head" aria-hidden="true"><span>1st</span><span>59th</span></div>
+<ol class="w-rank" aria-label="Most popular destinations for expats, of 59 countries analysed">
+<li class="me"><div class="row"><span class="pos">12th</span><span class="nm">Bahrain</span><span class="of">of 59</span></div><span class="scale" style="--at:12" aria-hidden="true"><i></i></span></li>
+<li><div class="row"><span class="pos">17th</span><span class="nm">Qatar</span><span class="of">of 59</span></div><span class="scale" style="--at:17" aria-hidden="true"><i></i></span></li>
+<li><div class="row"><span class="pos">18th</span><span class="nm">United Arab Emirates</span><span class="of">of 59</span></div><span class="scale" style="--at:18" aria-hidden="true"><i></i></span></li>
 </ol>
+<div class="a-sail w-photo"><img src="../assets/img/about1.jpg" alt="Two towers above the Harbour plaza under a wide sky" loading="lazy" decoding="async"></div>
 </div>
 </div>
 </section>
 
 <!-- 02 TAX -->
-<section class="chap px sec" style="padding:144px 72px;background:#F3F1EC">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:56px">
-<span class="lbl" style="grid-column:1 / span 3;align-self:start;margin-top:14px">02 &mdash; Tax</span>
-<div class="tx" style="grid-column:4 / span 4;padding-right:40px">
-<h2>Bahrain has the lowest <em>taxes in the GCC.</em></h2>
+<section id="tax" class="w-ch w-ch--night" data-chapter="Tax">
+<div class="w-grid">
+<div class="w-side"><div class="w-num" aria-hidden="true">02</div><span class="a-label">Tax</span><h2 class="w-h2">Bahrain has the lowest <em>taxes in the GCC.</em></h2></div>
+<div class="w-main">
+<div class="w-copy">
 <p>With no corporation, income, withholding tax, capital gains or wealth taxes and no inheritance taxes or death duties, Bahrain is the most tax efficient business base in the Gulf&nbsp;*.</p>
 <p class="hl">Bahrain is renowned as a &ldquo;Business Friendly&rdquo; liberal society; open-minded and actively encourages private enterprise.</p>
 <p class="todo">TODO-VERIFY: the source page has an asterisk after &ldquo;Gulf&rdquo; but no footnote. Add the source and date.</p>
 </div>
-<div style="grid-column:8 / span 5">
-<ul class="checks">
-<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>No corporation tax</li>
-<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>No income tax</li>
-<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>No withholding tax</li>
-<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>No capital gains tax</li>
-<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>No wealth tax</li>
-<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>No inheritance tax or death duties</li>
+<ul class="w-no" data-spot>
+<li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>No corporation tax</li>
+<li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>No income tax</li>
+<li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>No withholding tax</li>
+<li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>No capital gains tax</li>
+<li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>No wealth tax</li>
+<li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span>No inheritance tax or death duties</li>
 </ul>
 </div>
 </div>
 </section>
 
 <!-- 03 ENTERPRISE -->
-<section class="chap px sec" style="padding:144px 72px;background:#FBFAF7">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:56px">
-<span class="lbl" style="grid-column:1 / span 3;align-self:start;margin-top:14px">03 &mdash; Enterprise</span>
-<div class="tx" style="grid-column:4 / span 4;padding-right:40px">
-<h2>Leading the region in supporting <em>private enterprise.</em></h2>
+<section id="enterprise" class="w-ch w-ch--abyss" data-chapter="Enterprise">
+<div class="w-grid">
+<div class="w-side"><div class="w-num" aria-hidden="true">03</div><span class="a-label">Enterprise</span><h2 class="w-h2">Leading the region in supporting <em>private enterprise.</em></h2></div>
+<div class="w-main">
+<div class="w-copy">
 <p>Bahrain was the first GCC country with depleted oil reserves, consequently the Kingdom diversified early on by encouraging private enterprise. Bahrain&rsquo;s non-oil GDP is already in excess of 80%.</p>
 <p>Bahrain is actively encouraging private sector growth by allowing 100% foreign ownership and repatriation on income.</p>
 </div>
-<div style="grid-column:8 / span 5">
-<p class="pull">The whole of the Kingdom is effectively one massive Free Zone.</p>
-<div class="duo">
-<div><b>80<small>%+</small></b><span>Non-oil GDP</span></div>
-<div><b>100<small>%</small></b><span>Foreign ownership and repatriation on income</span></div>
 </div>
 </div>
-</div>
+<blockquote class="w-pull"><p>The whole of the Kingdom is effectively one massive <em>Free Zone.</em></p></blockquote>
+<dl class="w-duo">
+<div><dt>Non-oil GDP</dt><dd><span class="count" data-to="80" data-dec="0">80</span><small>%+</small></dd></div>
+<div><dt>Foreign ownership and repatriation on income</dt><dd><span class="count" data-to="100" data-dec="0">100</span><small>%</small></dd></div>
+</dl>
 </section>
 
 <!-- 04 LOCATION -->
-<section class="chap px sec" style="padding:144px 72px;background:#F3F1EC">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:56px">
-<span class="lbl" style="grid-column:1 / span 3;align-self:start;margin-top:14px">04 &mdash; Location</span>
-<div class="tx" style="grid-column:4 / span 4;padding-right:40px">
-<h2>Base yourself in the middle of <em>the Middle East.</em></h2>
+<section id="location" class="w-loc" data-chapter="Location">
+<img class="w-loc-bg" src="../assets/img/landmark-band.jpg" alt="The Harbour towers from the air, above the Manama waterfront" loading="lazy" decoding="async">
+<div class="w-loc-shade" aria-hidden="true"></div>
+<div class="w-loc-in">
+<div class="w-loc-head">
+<div class="w-num" aria-hidden="true">04</div>
+<span class="a-label">Location</span>
+<h2 class="w-h2">Base yourself in the middle of <em>the Middle East.</em></h2>
+</div>
+<div class="w-copy">
 <p>Major centres including Riyadh, Kuwait, Abu Dhabi, Dubai and Doha are around an hour&rsquo;s flight time. Bahrain Financial Harbour is only 10 minutes drive from Bahrain International Airport, headquarters to Gulf Air the best connected airline for regional flights.</p>
 <p>Consequently, access to every market in the Middle East is quick and efficient &ndash; by air, sea and road.</p>
 </div>
-<div style="grid-column:8 / span 5">
-<ol class="route">
-<li class="hub"><span class="dot">BFH</span><div><h3>Bahrain Financial Harbour</h3><p>On the Manama waterfront.</p></div></li>
-<li><span class="dot">10</span><div><h3>Bahrain International Airport</h3><p>Headquarters to Gulf Air, the best connected airline for regional flights.</p><span class="time">10 minutes&rsquo; drive</span></div></li>
-<li><span class="dot">1h</span><div><h3>Around an hour&rsquo;s flight to</h3><ul class="cities"><li>Riyadh</li><li>Kuwait</li><li>Abu Dhabi</li><li>Dubai</li><li>Doha</li></ul><span class="time">By air, sea and road</span></div></li>
+<ol class="w-route" data-reveal>
+<li class="hub" style="--i:0"><span class="dot" aria-hidden="true">BFH</span><div><h3>Bahrain Financial Harbour</h3><p>On the Manama waterfront.</p></div></li>
+<li style="--i:1"><span class="dot" aria-hidden="true">10</span><div><h3>Bahrain International Airport</h3><p>Headquarters to Gulf Air, the best connected airline for regional flights.</p><span class="time">10 minutes&rsquo; drive</span></div></li>
+<li style="--i:2"><span class="dot" aria-hidden="true">1h</span><div><h3>Around an hour&rsquo;s flight to</h3><ul class="w-cities"><li>Riyadh</li><li>Kuwait</li><li>Abu Dhabi</li><li>Dubai</li><li>Doha</li></ul><span class="time">By air, sea and road</span></div></li>
 </ol>
-</div>
 </div>
 </section>
 
 <!-- 05 PEOPLE -->
-<section class="chap px sec" style="padding:144px 72px;background:#FBFAF7">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:56px">
-<span class="lbl" style="grid-column:1 / span 3;align-self:start;margin-top:14px">05 &mdash; People</span>
-<div class="tx" style="grid-column:4 / span 4;padding-right:40px">
-<h2>It&rsquo;s not all about location, it&rsquo;s also <em>about the people.</em></h2>
+<section id="people" class="w-ch w-ch--deep" data-chapter="People">
+<div class="w-grid">
+<div class="w-side"><div class="w-num" aria-hidden="true">05</div><span class="a-label">People</span><h2 class="w-h2">It&rsquo;s not all about location, it&rsquo;s also <em>about the people.</em></h2></div>
+<div class="w-main">
+<div class="w-copy">
 <p>Bahrain has a highly developed workforce largely due to organizations like Tamkeen that identifies &ldquo;skill gaps&rdquo; in the market then invests in training Bahrainis to gain experiences that meet market needs.</p>
 <p>In the financial services sector alone, two-thirds of employees are Bahraini. The Harbour property is run efficiently with a 166 strong support team provided by a professional facilities management service.</p>
 </div>
-<div style="grid-column:8 / span 5">
-<div class="ph" style="margin-bottom:0"><img src="../assets/img/feat7.jpg" alt="The BFH tower lit at night" loading="lazy" style="object-position:50% 40%"></div>
-<div class="duo" style="border-top:0">
-<div><b>2/3</b><span>Of employees in financial services are Bahraini</span></div>
-<div><b>166</b><span>Strong support team, from a professional facilities management service</span></div>
-</div>
+<dl class="w-duo">
+<div><dt>Of employees in financial services are Bahraini</dt><dd>2/3</dd></div>
+<div><dt>Strong support team, from a professional facilities management service</dt><dd><span class="count" data-to="166" data-dec="0">166</span></dd></div>
+</dl>
+<div class="a-sail w-photo"><img src="../assets/img/feat7.jpg" alt="The BFH tower lit at night" loading="lazy" decoding="async" style="object-position:50% 40%"></div>
 </div>
 </div>
 </section>
 
 <!-- 06 QUALITY OF LIFE -->
-<section class="chap px sec" style="padding:144px 72px;background:#F3F1EC">
-<div class="g12" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:56px">
-<span class="lbl" style="grid-column:1 / span 3;align-self:start;margin-top:14px">06 &mdash; Quality of life</span>
-<div class="tx" style="grid-column:4 / span 4;padding-right:40px">
-<h2>Bahrain &ndash; the jewel <em>in the Middle East.</em></h2>
+<section id="life" class="w-ch w-ch--night" data-chapter="Quality of life">
+<div class="w-grid">
+<div class="w-side"><div class="w-num" aria-hidden="true">06</div><span class="a-label">Quality of life</span><h2 class="w-h2">Bahrain &ndash; the jewel <em>in the Middle East.</em></h2></div>
+<div class="w-main">
+<div class="w-copy">
 <p>Contributors to HSBC&rsquo;s Survey had nothing but praise for Bahrain. Expat parents are particularly complimentary about the country, with three-quarters (75%) saying it is a safer place for their children than their home country (compared with a global average of 61%). Six in ten (60%) expat parents we spoke to also rated the quality of life.</p>
 <p>In summary whilst overall around two-thirds (65%) say they saw the health of their children improve after moving (compared with a global average of 56%).</p>
 <p>Expats in Bahrain are also one of the best in the world at integrating into the local culture without losing their home identities.</p>
 </div>
-<div style="grid-column:8 / span 5">
-<div class="vs">
-<figure class="vs-row"><p class="q">Expat parents who say it is a safer place for their children than their home country</p>
-<div class="bar"><i style="--w:75%"></i><span>75%</span><em>Bahrain</em></div>
-<div class="bar avg"><i style="--w:61%"></i><span>61%</span><em>Global average</em></div></figure>
-<figure class="vs-row"><p class="q">Expat parents who rated the quality of life</p>
-<div class="bar"><i style="--w:60%"></i><span>60%</span><em>Bahrain</em></div></figure>
-<figure class="vs-row"><p class="q">Say their children&rsquo;s health improved after moving</p>
-<div class="bar"><i style="--w:65%"></i><span>65%</span><em>Bahrain</em></div>
-<div class="bar avg"><i style="--w:56%"></i><span>56%</span><em>Global average</em></div></figure>
+<div class="w-bars">
+<figure class="w-bar"><p class="q">Expat parents who say it is a safer place for their children than their home country</p><div class="bahrain"><div class="m"><b>75<small>%</small></b><span>Bahrain</span></div><span class="track" aria-hidden="true"><i style="--w:75%"></i></span></div><div class="avg"><div class="m"><b>61<small>%</small></b><span>Global average</span></div><span class="track" aria-hidden="true"><i style="--w:61%"></i></span></div></figure>
+<figure class="w-bar"><p class="q">Expat parents who rated the quality of life</p><div class="bahrain"><div class="m"><b>60<small>%</small></b><span>Bahrain</span></div><span class="track" aria-hidden="true"><i style="--w:60%"></i></span></div></figure>
+<figure class="w-bar"><p class="q">Say their children&rsquo;s health improved after moving</p><div class="bahrain"><div class="m"><b>65<small>%</small></b><span>Bahrain</span></div><span class="track" aria-hidden="true"><i style="--w:65%"></i></span></div><div class="avg"><div class="m"><b>56<small>%</small></b><span>Global average</span></div><span class="track" aria-hidden="true"><i style="--w:56%"></i></span></div></figure>
 </div>
-<p class="pull" style="margin-top:56px">Bahrain was placed 5th overall globally and 1st in the Middle East.</p>
-<ol class="rank" style="margin-top:0">
+<p class="w-pull-s">Bahrain was placed 5th overall globally and 1st in the Middle East.</p>
+<ol class="w-ladder" aria-label="HSBC expat survey ranking">
 <li><span class="pos">1st</span><span class="nm">Switzerland</span></li>
 <li><span class="pos">2nd</span><span class="nm">Singapore</span></li>
 <li><span class="pos">3rd</span><span class="nm">China</span></li>
@@ -255,20 +265,20 @@
 </div>
 </section>
 
-<p class="src" style="background:#F3F1EC;padding-bottom:56px">Sources: survey results as published by Bahrain Financial Harbour (InterNations Expat Insider 2021 and an HSBC expat survey).</p>
-<p class="src todo">TODO-VERIFY: these figures come from the existing bfharbour.com page. Confirm they are current and add survey years and links.</p>
+<p class="w-src">Sources: survey results as published by Bahrain Financial Harbour (InterNations Expat Insider 2021 and an HSBC expat survey).</p>
+<p class="w-src todo">TODO-VERIFY: these figures come from the existing bfharbour.com page. Confirm they are current and add survey years and links.</p>
 
 <!-- VISIT -->
-<section id="visit" style="position:relative;height:620px;overflow:hidden;background:#06302A;color:#fff">
-<img src="../assets/img/bfh-tower.jpg" alt="The BFH tower above Manama and the bay" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block" loading="lazy">
-<div aria-hidden="true" style="position:absolute;top:0;right:0;bottom:0;left:0;background:linear-gradient(90deg,rgba(4,18,16,.86) 0%,rgba(4,18,16,.55) 50%,rgba(4,18,16,.1) 100%),linear-gradient(0deg,rgba(4,18,16,.6) 0%,rgba(4,18,16,0) 45%)"></div>
-<div class="px" style="position:absolute;top:0;left:0;right:0;bottom:0;padding:96px 72px;display:flex;flex-direction:column;justify-content:space-between">
-<span class="lbl d">Visit</span>
-<div style="display:flex;flex-direction:column;gap:48px;max-width:760px">
-<h2 style="margin:0;font-weight:200;font-size:clamp(2.75rem,5.8vw,5.75rem);line-height:1.04;letter-spacing:-.035em;text-wrap:balance">Take your place in the <em style="font-style:italic;font-weight:300;letter-spacing:-.02em;color:#D9BE8A">Harbour.</em></h2>
-<div class="stack-m" style="display:flex;gap:16px;flex-wrap:wrap">
+<section id="visit" class="a-cta" data-chapter="Arrival">
+<img class="fill" src="../assets/img/bfh-tower.jpg" alt="The BFH tower above Manama and the bay" loading="lazy" decoding="async">
+<div class="a-cta-shade" aria-hidden="true"></div>
+<div class="a-cta-in">
+<span class="a-label">Visit</span>
+<div>
+<h2 class="a-h2">Take your place in the <em>Harbour.</em></h2>
+<div class="a-btns" style="margin-top:44px">
 <a class="btn" href="../#spaces" style="border-color:#D9BE8A;color:#D9BE8A"><span>Explore the Harbour</span></a>
-<a class="btn" href="mailto:bfharbour@gmail.com?subject=Leasing%20enquiry" style="border-color:rgba(255,255,255,.55);color:#fff"><span>Enquire about leasing</span></a>
+<a class="btn" href="../#enquire" style="border-color:rgba(255,255,255,.55);color:#fff"><span>Enquire about leasing</span></a>
 </div>
 </div>
 </div>
@@ -285,7 +295,7 @@
 </div>
 <div style="display:flex;flex-direction:column;gap:14px;font-size:14px;font-weight:300;line-height:1.5;color:rgba(255,255,255,.82)">
 <span style="margin-bottom:10px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#D9BE8A">Offices</span>
-<a class="navlink" href="../#workspaces">Efficient Floor Plates</a><a class="navlink" href="../#spaces">Meeting Your Needs</a><a class="navlink" href="../#landmark">Stunning Views</a><a class="navlink" href="../#visit">BFH Events</a>
+<a class="navlink" href="../#spaces">Efficient Floor Plates</a><a class="navlink" href="../#spaces">Meeting Your Needs</a><a class="navlink" href="../#landmark">Stunning Views</a><a class="navlink" href="../#visit">BFH Events</a>
 </div>
 <div style="display:flex;flex-direction:column;gap:14px;font-size:14px;font-weight:300;line-height:1.6;color:rgba(255,255,255,.82)">
 <span style="margin-bottom:10px;font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#D9BE8A">Find Us</span>
