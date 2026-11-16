@@ -1,0 +1,33 @@
+/*
+  Arabic page, in the "Ascent" look: the same dark night ground, the same big stacked title on the
+  aerial photo, the same header pill. Loads after ../assets/css/styles.css and ../assets/css/ascent.css.
+  Only IBM Plex Sans Arabic carries Arabic text; letter-spacing stays 0 so the letters keep joining.
+*/
+
+body.ar-page { background: var(--night); color: #fff; }
+
+.ar-page .a-hero { font-family: 'IBM Plex Sans Arabic', 'Poppins', system-ui, sans-serif; }
+.ar-page .a-hero-img { animation: ar-drift 22s cubic-bezier(.16, 1, .3, 1) both; }
+@keyframes ar-drift { from { transform: scale(1.1); } to { transform: none; } }
+.ar-page .a-hero-shade { background: linear-gradient(180deg, rgba(2, 18, 15, .72) 0%, rgba(2, 18, 15, .04) 30%, rgba(2, 18, 15, .22) 52%, rgba(2, 18, 15, .94) 100%), linear-gradient(270deg, rgba(2, 18, 15, .5) 0%, rgba(2, 18, 15, 0) 62%); }
+
+.ar-page .a-kicker { margin: 0 0 18px; font-style: normal; font-weight: 400; font-size: clamp(1.25rem, 2.1vw, 2rem); letter-spacing: 0; text-shadow: 0 1px 18px rgba(2, 18, 15, .55); }
+.ar-page .a-hero h1 { font-family: 'IBM Plex Sans Arabic', 'Poppins', sans-serif; font-weight: 300; font-size: clamp(3.5rem, 9.6vw, 10.5rem); line-height: 1.08; letter-spacing: 0; text-transform: none; color: rgba(255, 255, 255, .92); }
+@media (max-height: 760px) { .ar-page .a-hero h1 { font-size: clamp(3.25rem, 7.4vw, 8rem); } }
+
+.ar-where { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 16px clamp(28px, 4.5vw, 72px); }
+.ar-city { font-size: 15px; font-weight: 500; line-height: 1.7; color: var(--goldL); }
+.ar-addr { font-family: 'Poppins', system-ui, sans-serif; font-size: 13px; font-weight: 300; line-height: 1.8; text-align: left; color: rgba(255, 255, 255, .86); }
+.ar-page .a-cue { font-size: 14px; font-weight: 400; letter-spacing: 0; text-transform: none; }
+
+.ar-page .site-header-actions .menu-btn { text-decoration: none; }
+.ar-page .ar-footer { border-top: 1px solid rgba(255, 255, 255, .12); }
+
+@media (max-width: 860px) {
+  .ar-page .a-hero h1 { font-size: clamp(3.5rem, 18vw, 7rem) !important; }
+  .ar-page .a-hero-foot { align-items: flex-start; }
+  .ar-where { flex-direction: column; gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ar-page .a-hero-img { animation: none; }
+}
