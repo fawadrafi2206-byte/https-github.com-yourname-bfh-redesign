@@ -47,7 +47,7 @@ body.w-page { background: var(--night); color: #fff; }
 .w-side { grid-column: 1 / span 5; position: sticky; top: 132px; padding-right: clamp(0px, 3vw, 56px); }
 .w-main { grid-column: 7 / span 6; min-width: 0; }
 .w-num { margin: 0 0 clamp(24px, 3vw, 40px); font-family: 'Google Sans Flex', 'Poppins', sans-serif; font-weight: 200; font-size: clamp(4.5rem, 8vw, 8rem); line-height: .8; letter-spacing: -.05em; color: var(--goldL); font-variant-numeric: tabular-nums lining-nums; }
-.w-h2 { margin: 32px 0 0; font-weight: 200; font-size: clamp(2.25rem, 3.8vw, 4rem); line-height: 1.04; letter-spacing: -.04em; text-wrap: balance; }
+.w-h2 { margin: 32px 0 0; font-family: var(--display); font-weight: 200; font-size: clamp(2.25rem, 3.8vw, 4rem); line-height: 1.04; letter-spacing: -.04em; text-wrap: balance; }
 .w-h2 em { font-style: italic; font-weight: 300; letter-spacing: -.02em; color: var(--goldL); }
 .w-copy p { margin: 0 0 24px; max-width: 58ch; font-size: 17px; font-weight: 300; line-height: 1.85; color: rgba(255, 255, 255, .82); text-wrap: pretty; }
 .w-copy p:last-child { margin-bottom: 0; }
@@ -73,7 +73,7 @@ body.w-page { background: var(--night); color: #fff; }
 
 /* 02: the list that picks its line as you scroll */
 .w-no { list-style: none; margin: clamp(48px, 6vw, 88px) 0 0; padding: 0; border-bottom: 1px solid rgba(255, 255, 255, .16); }
-.w-no li { display: flex; align-items: center; gap: 24px; padding: clamp(20px, 3vh, 34px) 0; border-top: 1px solid rgba(255, 255, 255, .16); font-weight: 200; font-size: clamp(1.5rem, 3vw, 3rem); line-height: 1.1; letter-spacing: -.035em; color: #fff; }
+.w-no li { display: flex; align-items: center; gap: 24px; font-family: var(--display); padding: clamp(20px, 3vh, 34px) 0; border-top: 1px solid rgba(255, 255, 255, .16); font-weight: 200; font-size: clamp(1.5rem, 3vw, 3rem); line-height: 1.1; letter-spacing: -.035em; color: #fff; }
 .w-no .tick { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid rgba(255, 255, 255, .3); border-radius: 50%; transition: background-color .5s, border-color .5s; }
 .w-no .tick svg { width: 20px; height: 20px; fill: none; stroke: var(--goldL); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: stroke .5s; }
 .w-no li.is-on .tick { background: var(--gold); border-color: var(--gold); }
@@ -85,7 +85,7 @@ body.w-page { background: var(--night); color: #fff; }
 
 /* 03: one loud sentence, two big numbers */
 .w-pull { margin: clamp(72px, 9vw, 140px) 0 0; padding: 0; }
-.w-pull p { margin: 0; max-width: 20ch; font-weight: 200; font-size: clamp(2.5rem, 6.4vw, 7rem); line-height: 1.02; letter-spacing: -.04em; text-wrap: balance; }
+.w-pull p { margin: 0; max-width: 20ch; font-family: var(--display); font-weight: 200; font-size: clamp(2.5rem, 6.4vw, 7rem); line-height: 1.02; letter-spacing: -.04em; text-wrap: balance; }
 .w-pull em { font-style: italic; font-weight: 300; letter-spacing: -.02em; color: var(--goldL); }
 .w-duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: clamp(56px, 7vw, 104px) 0 0; border-top: 1px solid rgba(255, 255, 255, .2); }
 .w-duo > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 24px; padding: 40px clamp(16px, 2.4vw, 40px) 0 0; }
@@ -113,7 +113,7 @@ body.w-page { background: var(--night); color: #fff; }
 .w-route > li:last-child::before { display: none; }
 .js .w-route > li::before { transform: scaleX(0); transition: transform 1.4s var(--ease) calc(var(--i, 0) * .4s); }
 .js .w-route.is-in > li::before { transform: scaleX(1); }
-.w-route h3 { margin: 0; font-weight: 300; font-size: clamp(1.25rem, 1.8vw, 1.75rem); line-height: 1.25; letter-spacing: -.02em; }
+.w-route h3 { margin: 0; font-family: var(--display); font-weight: 300; font-size: clamp(1.25rem, 1.8vw, 1.75rem); line-height: 1.25; letter-spacing: -.02em; }
 .w-route p { margin: 12px 0 0; max-width: 36ch; font-size: 15px; font-weight: 300; line-height: 1.75; color: rgba(255, 255, 255, .82); }
 .w-route .time { display: inline-block; margin-top: 18px; padding-bottom: 6px; border-bottom: 1px solid var(--gold); font-size: 11px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; color: var(--goldL); }
 .w-cities { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; padding: 0; list-style: none; }
