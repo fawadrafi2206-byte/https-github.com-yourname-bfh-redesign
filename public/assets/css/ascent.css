@@ -10,6 +10,10 @@
   --night: #04201C; --deep: #06302A; --abyss: #02120F; --harbour: #0B4F42;
   --gold: #C2A267; --goldL: #D9BE8A; --paper: #FBFAF7; --paper2: #F3F1EC; --ink: #17201E;
   --ease: cubic-bezier(.16, 1, .3, 1);
+  /* BFH's two fonts, used the way the BFH site uses them: Google Sans Flex for display headlines, service and
+     feature titles, the founder's name and the big numbers; Poppins for everything else (body, buttons, labels,
+     space-card names, testimonials, footer). */
+  --display: 'Google Sans Flex', 'Poppins', sans-serif;
 }
 @media (max-width: 860px) { :root { --gut: 24px; } }
 
@@ -20,7 +24,7 @@ body.a-home { background: var(--night); color: #fff; }
 .a-ch { position: relative; padding: clamp(96px, 11vw, 176px) var(--gut); }
 .a-label { display: flex; align-items: center; gap: 16px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; color: var(--goldL); }
 .a-label::before { content: ''; display: block; width: 32px; height: 1px; background: currentColor; }
-.a-h2 { margin: 0; font-weight: 200; font-size: clamp(2.75rem, 6.4vw, 6.5rem); line-height: 1.02; letter-spacing: -.04em; text-wrap: balance; }
+.a-h2 { margin: 0; font-family: var(--display); font-weight: 200; font-size: clamp(2.75rem, 6.4vw, 6.5rem); line-height: 1.02; letter-spacing: -.04em; text-wrap: balance; }
 .a-h2 em { font-style: italic; font-weight: 300; letter-spacing: -.02em; color: var(--goldL); }
 .a-lead { margin: 0; max-width: 46ch; font-size: clamp(1rem, 1.25vw, 1.1875rem); font-weight: 300; line-height: 1.8; color: rgba(255, 255, 255, .8); text-wrap: pretty; }
 .a-btns { display: flex; flex-wrap: wrap; gap: 16px; }
@@ -79,7 +83,7 @@ body.a-home { background: var(--night); color: #fff; }
 .a-feat-list li { border-top: 1px solid rgba(255, 255, 255, .16); }
 .a-feat-link { display: flex; align-items: center; gap: 28px; min-height: 34vh; padding: 28px 0; color: rgba(255, 255, 255, .34); font-weight: 200; font-size: clamp(1.75rem, 3.4vw, 3.5rem); line-height: 1.1; letter-spacing: -.035em; transition: color .6s ease; }
 .a-feat-link .n { flex: none; width: 3ch; font-size: 11px; font-weight: 500; letter-spacing: .22em; color: var(--goldL); }
-.a-feat-link .t { flex: 1 1 auto; }
+.a-feat-link .t { flex: 1 1 auto; font-family: var(--display); }
 .a-feat-link .plus { flex: none; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid rgba(255, 255, 255, .3); border-radius: 50%; font-size: 20px; font-weight: 200; line-height: 1; color: #fff; transition: background-color .4s, color .4s, border-color .4s; }
 .a-feat-link:hover { color: #fff; }
 .a-feat-link:hover .plus { background: var(--gold); border-color: var(--gold); color: var(--abyss); }
@@ -149,7 +153,7 @@ body.a-home { background: var(--night); color: #fff; }
 .a-serv-item .im img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
 .a-serv-item:hover .im img { transform: scale(1.04); }
 .a-serv-item .no { font-family: 'Google Sans Flex', 'Poppins', sans-serif; font-weight: 200; font-size: clamp(3rem, 5vw, 5rem); line-height: 1; letter-spacing: -.04em; color: var(--goldL); }
-.a-serv-item h3 { margin: 28px 0 0; font-size: 17px; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; }
+.a-serv-item h3 { margin: 28px 0 0; font-family: var(--display); font-size: 17px; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; }
 .a-serv-item p { margin: 16px 0 0; font-size: 15px; font-weight: 300; line-height: 1.85; color: rgba(255, 255, 255, .78); text-wrap: pretty; }
 
 /* ---------- voices and founder ---------- */
@@ -172,7 +176,7 @@ body.a-home { background: var(--night); color: #fff; }
 .a-founder blockquote { margin: 40px 0 0; padding-left: 28px; border-left: 1px solid var(--gold); font-style: italic; font-weight: 300; font-size: clamp(1.25rem, 1.9vw, 1.875rem); line-height: 1.5; color: var(--goldL); text-wrap: pretty; }
 .a-person { display: flex; align-items: center; gap: 16px; margin-top: 32px; }
 .a-person img { display: block; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
-.a-person b { display: block; font-size: 15px; font-weight: 500; }
+.a-person b { display: block; font-family: var(--display); font-size: 15px; font-weight: 500; }
 .a-person span { display: block; margin-top: 4px; font-size: 12px; font-weight: 300; letter-spacing: .06em; color: rgba(255, 255, 255, .72); }
 .a-iv { display: block; margin-top: 48px; }
 .a-iv .ph { display: block; position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #0b1513; }
@@ -208,6 +212,8 @@ body.a-home { background: var(--night); color: #fff; }
 .a-cta-in { position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: clamp(72px, 8vw, 112px) var(--gut); display: flex; flex-direction: column; justify-content: space-between; }
 .a-cta .a-h2 { max-width: 12ch; font-size: clamp(3rem, 7.4vw, 7.5rem); }
 .a-enq { background: var(--paper2); color: var(--ink); padding: clamp(96px, 11vw, 160px) var(--gut); }
+/* headings that live in styles.css or inline: same display font */
+.climb-title, .m-title, .enq-done h3, .a-enq h2 { font-family: var(--display); }
 
 /* ---------- floor gauge (desktop) ---------- */
 .a-gauge { position: fixed; left: max(20px, calc(var(--gut) - 54px)); top: 50%; z-index: 55; width: 44px; height: 46vh; transform: translateY(-50%); pointer-events: none; opacity: 0; transition: opacity .6s ease; }
